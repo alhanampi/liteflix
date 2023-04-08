@@ -2,13 +2,13 @@ import styled from "styled-components";
 
 export const DropdownContainer = styled.div`
   position: absolute;
-  top: 0em;
+  top: 5em;
   right: 0em;
   background-color: var(--primary-grey);
-  height: 50%;
+  height: 55vh;
   width: 25%;
-  z-index: 25;
-  padding: 6% 4%;
+  z-index: 15;
+  padding: 2% 4%;
 
   .closeButton {
     margin-top: 3%;

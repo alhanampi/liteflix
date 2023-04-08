@@ -6,7 +6,7 @@ import { BsBell } from "react-icons/bs";
 import { IoMdClose } from "react-icons/io";
 import Dropdown from "../dropdown";
 
-const Header: FC = ({ onClose }: any) => {
+const Header: FC = () => {
   const [showClose, setShowClose] = useState(false);
   const [showModal, setShowModal] = useState(false);
 
@@ -33,17 +33,18 @@ const Header: FC = ({ onClose }: any) => {
       </Left>
 
       <Right>
-        <IoMdClose
-          size={25}
-          onClick={onClose}
-          className={`closeButton ${showClose ? "show" : ""}`}
-        />
+        {showModal && (
+          <IoMdClose
+            size={25}
+            onClick={() => setShowModal(!showModal)}
+            className="closeButton show"
+          />
+        )}
         <HiMenuAlt3 size={25} onClick={showCloseButton} />
         <BsBell size={25} />
         <img src="/images/user.jpg" />
       </Right>
 
-      {/* ver donde poner esto */}
       {showModal && <Dropdown />}
     </HeaderContainer>
   );
