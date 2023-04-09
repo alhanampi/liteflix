@@ -1,36 +1,38 @@
-import { getNowPlaying } from "@/services/movieService";
-import { FC, useEffect, useState } from "react";
-import { NowPlayingContainer, ButtonContainer } from "./styles";
-import Button from "../button";
-import { BiPlay } from "react-icons/bi";
-import { VscAdd } from "react-icons/vsc";
+import { FC, useEffect, useState } from 'react';
+import { BiPlay } from 'react-icons/bi';
+import { VscAdd } from 'react-icons/vsc';
+import { getNowPlaying } from '@/services/movieService';
+import { NowPlayingContainer, ButtonContainer } from './styles';
+import Button from '../button';
 
 const NowPlaying: FC = () => {
-  const [nowPlaying, setNowPlaying] = useState<any>([]);
+  const [nowPlaying, setNowPlaying] = useState<any>( [] );
 
-  useEffect(() => {
+  useEffect( () => {
     getNowPlaying()
-      .then((res) => {
-        setNowPlaying(res);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, []);
+      .then( ( res ) => {
+        setNowPlaying( res );
+      } )
+      .catch( ( err ) => {
+        console.log( err );
+      } );
+  }, [] );
 
   return (
     <NowPlayingContainer>
       <img
-        src={`https://image.tmdb.org/t/p/original${nowPlaying.backdrop_path}`}
-        alt="image poster"
+        src={ `https://image.tmdb.org/t/p/original${nowPlaying.backdrop_path}` }
+        alt="poster"
       />
       <h2>{nowPlaying.original_title}</h2>
       <p>
-        Original de <span> LITEFLIX</span>
+        Original de
+        {' '}
+        <span> LITEFLIX</span>
       </p>
       <ButtonContainer>
-        <Button text="Reproducir" icon={<BiPlay />} variation={true} />
-        <Button text="Mi Lista" icon={<VscAdd />} variation={false} />
+        <Button text="Reproducir" icon={ <BiPlay /> } variation />
+        <Button text="Mi Lista" icon={ <VscAdd /> } variation={ false } />
       </ButtonContainer>
     </NowPlayingContainer>
   );

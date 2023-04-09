@@ -1,12 +1,14 @@
-import { createContext, useState } from "react";
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable react/jsx-no-constructed-context-values */
+import { createContext, useState } from 'react';
 
-const LiteFlixContext = createContext({});
+const LiteFlixContext = createContext( {} );
 
 function LiteflixApp() {
-  const [state, setState] = useState({/* initial state */});
+  const [state, setState] = useState( {/* initial state */} );
 
   return (
-    <LiteFlixContext.Provider value={{ state, setState }}>
+    <LiteFlixContext.Provider value={ { state, setState } }>
       {/* Your app components */}
     </LiteFlixContext.Provider>
   );

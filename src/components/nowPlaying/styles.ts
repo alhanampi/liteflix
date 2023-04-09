@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const NowPlayingContainer = styled.div`
   img {
@@ -28,12 +28,11 @@ export const NowPlayingContainer = styled.div`
       font-weight: 700;
     }
   }
-
-  `;
+`;
 
 export const ButtonContainer = styled.div`
   position: absolute;
   top: 75%;
   left: 8%;
   width: 100%;
-`
+`;

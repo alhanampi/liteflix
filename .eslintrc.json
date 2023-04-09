@@ -1,3 +1,29 @@
 {
-  "extends": "next/core-web-vitals"
+  "parser": "@typescript-eslint/parser",
+  "extends": [
+    "airbnb",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended"
+  ],
+  "plugins": [
+    "@typescript-eslint",
+    "react"
+  ],
+  "rules": {
+    "linebreak-style": "off",
+    "react/jsx-curly-spacing": ["error", { "when": "always" }],
+    "space-in-parens": ["error", "always"],
+    "no-console": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx", ".tsx"] }],
+    "import/extensions": "off",
+    "import/no-unresolved": "off",
+    "react/function-component-definition": "off", // disable the 'Function component is not a function declaration' rule
+    "react/react-in-jsx-scope": "off" // disable the 'React must be in scope when using JSX' rule
+  },
+  "settings": {
+    "react": {
+      "version": "detect" // Automatically detect the version of React to use
+    }
+  }
 }

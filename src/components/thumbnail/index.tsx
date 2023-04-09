@@ -1,7 +1,7 @@
-import { FC } from "react";
-import { ThumbnailContainer } from "./styles";
-import { BsPlayCircle } from "react-icons/bs";
-import { AiFillStar } from "react-icons/ai";
+import { FC } from 'react';
+import { BsPlayCircle } from 'react-icons/bs';
+import { AiFillStar } from 'react-icons/ai';
+import { ThumbnailContainer } from './styles';
 
 export interface IThumbnail {
   image: string;
@@ -10,25 +10,27 @@ export interface IThumbnail {
   year: string;
 }
 
-const Thumbnail: FC<IThumbnail> = ({ image, text, score, year }) => {
-  return (
-    <ThumbnailContainer>
-      <span>
-        <img src={image} />
-      </span>
-      <h3>{text}</h3>
-      <BsPlayCircle className="play" />
+const Thumbnail: FC<IThumbnail> = ( {
+  image, text, score, year,
+} ) => (
+  <ThumbnailContainer>
+    <span>
+      <img src={ image } alt="thumbnail" />
+    </span>
+    <h3>{text}</h3>
+    <BsPlayCircle className="play" />
 
-      <div className="hover">
-        <div className="scoreContainer">
-          <span>
-            <AiFillStar className="star" /> <p>{score}</p>
-          </span>
-          <p>{year}</p>
-        </div>
+    <div className="hover">
+      <div className="scoreContainer">
+        <span>
+          <AiFillStar className="star" />
+          {' '}
+          <p>{score}</p>
+        </span>
+        <p>{year}</p>
       </div>
-    </ThumbnailContainer>
-  );
-};
+    </div>
+  </ThumbnailContainer>
+);
 
 export default Thumbnail;

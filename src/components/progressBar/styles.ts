@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 interface IProgressBarContainerProps {
   color: string;
@@ -21,14 +21,14 @@ export const ProgressBarContainer = styled.div<IProgressBarContainerProps>`
 
   .progress {
     height: 20px;
-    width: ${(props) => props.completed}%;
-    background-color: ${(props) => props.color};
+    width: ${( props ) => props.completed}%;
+    background-color: ${( props ) => props.color};
     border-radius: inherit;
     text-align: center;
   }
 
   span {
-    color: ${(props) => props.color};
+    color: ${( props ) => props.color};
     padding: 5;
   }
 `;

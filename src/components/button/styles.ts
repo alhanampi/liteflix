@@ -1,5 +1,6 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
+// eslint-disable-next-line import/prefer-default-export
 export const ButtonContainer = styled.button`
   cursor: pointer;
   border: 1px solid var(--primary-white);
@@ -7,7 +8,7 @@ export const ButtonContainer = styled.button`
   color: var(--primary-white);
   height: 3em;
   width: 15em;
-  font-family: "Bebas Neue";
+  font-family: 'Bebas Neue';
   font-weight: 400;
   font-size: 1.2em;
   margin: 1em;

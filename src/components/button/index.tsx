@@ -1,5 +1,6 @@
-import React, { FC } from "react";
-import { ButtonContainer } from "./styles";
+/* eslint-disable react/require-default-props */
+import { FC } from 'react';
+import { ButtonContainer } from './styles';
 
 export interface IButton {
   text: string;
@@ -10,19 +11,17 @@ export interface IButton {
   classN?: string;
 }
 
-const Button: FC<IButton> = ({ icon, text, onClick, variation, disabled, classN }) => {
-  return (
-    <>
-      <ButtonContainer
-        onClick={onClick}
-        className={variation ? "var" : "" + classN}
-        disabled={disabled}
-      >
-        {icon}
-        {text}
-      </ButtonContainer>
-    </>
-  );
-};
+const Button: FC<IButton> = ( {
+  icon, text, onClick, variation, disabled, classN,
+} ) => (
+  <ButtonContainer
+    onClick={ onClick }
+    className={ variation ? 'var' : `${classN}` }
+    disabled={ disabled }
+  >
+    {icon}
+    {text}
+  </ButtonContainer>
+);
 
 export default Button;

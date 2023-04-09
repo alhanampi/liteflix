@@ -1,4 +1,5 @@
-import styled from "styled-components";
+/* eslint-disable import/prefer-default-export */
+import styled from 'styled-components';
 
 export const AddModalContainer = styled.div`
   position: absolute;
@@ -42,7 +43,7 @@ export const AddModalContainer = styled.div`
     margin: 2% 0;
     height: 25%;
     width: 100%;
-    font-family: "Bebas Neue", sans-serif;
+    font-family: 'Bebas Neue', sans-serif;
     font-size: 1em;
     letter-spacing: 2px;
     cursor: pointer;
@@ -55,7 +56,7 @@ export const AddModalContainer = styled.div`
   input {
     background: transparent;
     color: var(--primary-white);
-    font-family: "Bebas Neue", sans-serif;
+    font-family: 'Bebas Neue', sans-serif;
     font-size: 1em;
     border:none;
     border-bottom: 1px solid var(--primary-white);
