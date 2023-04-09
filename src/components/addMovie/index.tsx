@@ -1,13 +1,16 @@
 /* eslint-disable consistent-return */
 /* eslint-disable react/no-children-prop */
 /* eslint-disable no-shadow */
-import { FC, useEffect, useState } from 'react';
+import {
+  FC, useEffect, useState, useContext,
+} from 'react';
 import { AiOutlinePaperClip } from 'react-icons/ai';
 import { IoMdClose } from 'react-icons/io';
 import { FileUploader } from 'react-drag-drop-files';
 import Button from '../button';
 import { AddModalContainer } from './styles';
 import ProgressBar from '../progressBar';
+import { LiteFlixContext } from '@/context';
 
 const fileTypes = ['JPG', 'PNG', 'GIF'];
 
@@ -17,6 +20,7 @@ interface Movie {
 }
 
 const AddMovieModal: FC = () => {
+  const { handleModal } = useContext( LiteFlixContext );
   const [showAdd, setshowAdd] = useState<boolean>( true );
   const [progress, setProgress] = useState<number>( 0 );
   const [file, setFile] = useState<File | null>( null );
@@ -87,9 +91,20 @@ const AddMovieModal: FC = () => {
     }
   }, [showAdd, progress] );
 
+  const cancelUpload = () => {
+    const storedMovies = localStorage.getItem( 'movies' );
+    if ( storedMovies ) {
+      const moviesArray = JSON.parse( storedMovies );
+      moviesArray.pop();
+      localStorage.setItem( 'movies', JSON.stringify( moviesArray ) );
+      setMovies( moviesArray );
+      setshowAdd( !showAdd );
+    }
+  };
+
   return (
     <AddModalContainer>
-      <IoMdClose size={ 25 } className="close" />
+      <IoMdClose size={ 25 } className="close" onClick={ handleModal } />
       <h2>Agregar película</h2>
 
       {showAdd ? (
@@ -122,6 +137,7 @@ const AddMovieModal: FC = () => {
         <ProgressBar
           completed={ progress }
           color={ error ? 'var(--error-red)' : 'var(--primary-aqua)' }
+          cancelUpload={ cancelUpload }
         />
       )}
       <div>
@@ -146,7 +162,7 @@ const AddMovieModal: FC = () => {
             <Button
               text="Ir al home"
               variation={ false }
-              onClick={ console.log( 'home' ) }
+              onClick={ handleModal }
               classN="smallBtn"
             />
           </>

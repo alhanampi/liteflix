@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
-import { FC, useState } from 'react';
+import { FC, useContext, useState } from 'react';
 import { VscAdd } from 'react-icons/vsc';
 import { HiMenuAlt3 } from 'react-icons/hi';
 import { BsBell } from 'react-icons/bs';
@@ -9,19 +9,22 @@ import {
   HeaderContainer, Left, Logo, Right,
 } from './styles';
 import Dropdown from '../dropdown';
+import { LiteFlixContext } from '@/context';
 
 const Header: FC = () => {
-  const [showClose, setShowClose] = useState( false );
-  const [showModal, setShowModal] = useState( false );
+  const { handleModal } = useContext( LiteFlixContext );
+
+  const [showClose, setShowClose] = useState<boolean>( false );
+  const [showOptionsModal, setShowOptionsModal] = useState<boolean>( false );
 
   const showCloseButton = () => {
     setShowClose( !showClose );
-    setShowModal( !showModal );
+    setShowOptionsModal( !showOptionsModal );
   };
 
   const addMovie = ( e: any ) => {
     e.preventDefault();
-    console.log( 'click' );
+    handleModal();
   };
 
   return (
@@ -39,10 +42,10 @@ const Header: FC = () => {
       </Left>
 
       <Right>
-        {showModal && (
+        {showOptionsModal && (
           <IoMdClose
             size={ 25 }
-            onClick={ () => setShowModal( !showModal ) }
+            onClick={ () => setShowOptionsModal( !showOptionsModal ) }
             className="closeButton show"
           />
         )}
@@ -51,7 +54,7 @@ const Header: FC = () => {
         <img src="/images/user.jpg" alt="avatar" />
       </Right>
 
-      {showModal && <Dropdown />}
+      {showOptionsModal && <Dropdown />}
     </HeaderContainer>
   );
 };

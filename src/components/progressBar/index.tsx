@@ -4,9 +4,10 @@ import { Cancelar, CargandoContainer, ProgressBarContainer } from './styles';
 export interface IProgressBar {
   completed: number;
   color: string;
+  cancelUpload: any;
 }
 
-const ProgressBar: FC<IProgressBar> = ( { completed, color } ) => (
+const ProgressBar: FC<IProgressBar> = ( { completed, color, cancelUpload } ) => (
   <>
     <CargandoContainer>
       Cargando
@@ -17,9 +18,9 @@ const ProgressBar: FC<IProgressBar> = ( { completed, color } ) => (
       <div className="progress" />
     </ProgressBarContainer>
     {completed < 100 && (
-    <Cancelar>
-      <p>Cancelar</p>
-    </Cancelar>
+      <Cancelar onClick={ cancelUpload }>
+        <p>Cancelar</p>
+      </Cancelar>
     )}
   </>
 );

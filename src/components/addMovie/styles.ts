@@ -7,7 +7,7 @@ export const AddModalContainer = styled.div`
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: var(--primary-grey);
-  height: 30vh;
+  height: 37vh;
   width: 35%;
   z-index: 15;
   padding: 2% 4%;

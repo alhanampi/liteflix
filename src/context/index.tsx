@@ -1,15 +1,25 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable @typescript-eslint/no-empty-function */
 /* eslint-disable react/jsx-no-constructed-context-values */
 import { createContext, useState } from 'react';
 
-const LiteFlixContext = createContext( {} );
+interface ILiteFlixContext {
+  showModal: boolean;
+  handleModal: () => void;
+}
 
-function LiteflixApp() {
-  const [state, setState] = useState( {/* initial state */} );
+export const LiteFlixContext = createContext<ILiteFlixContext>( {
+  showModal: false,
+  handleModal: () => {},
+} );
 
+export const LiteFlixProvider = ( { children }: { children: React.ReactNode } ) => {
+  const [showModal, setShowModal] = useState<boolean>( false );
+  const handleModal = () => {
+    setShowModal( !showModal );
+  };
   return (
-    <LiteFlixContext.Provider value={ { state, setState } }>
-      {/* Your app components */}
+    <LiteFlixContext.Provider value={ { showModal, handleModal } }>
+      {children}
     </LiteFlixContext.Provider>
   );
-}
+};
