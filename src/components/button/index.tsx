@@ -6,12 +6,18 @@ export interface IButton {
   icon?: JSX.Element;
   onClick?: any;
   variation: boolean;
+  disabled?: boolean;
+  classN?: string;
 }
 
-const Button: FC<IButton> = ({ icon, text, onClick, variation }) => {
+const Button: FC<IButton> = ({ icon, text, onClick, variation, disabled, classN }) => {
   return (
     <>
-      <ButtonContainer onClick={onClick} className={variation ? "var" : ""}>
+      <ButtonContainer
+        onClick={onClick}
+        className={variation ? "var" : "" + classN}
+        disabled={disabled}
+      >
         {icon}
         {text}
       </ButtonContainer>

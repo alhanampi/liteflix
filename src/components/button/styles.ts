@@ -11,12 +11,6 @@ export const ButtonContainer = styled.button`
   font-weight: 400;
   font-size: 1.2em;
   margin: 1em;
-  /* chequear como centrar después */
-  /* text-align: center;
-   display: flex;
-  align-items: center;
-  gap: 0.5rem; */
-  /* flex-wrap: nowrap; */
 
   &.var {
     border: none;
@@ -27,5 +21,16 @@ export const ButtonContainer = styled.button`
     font-weight: 700;
     background-color: var(--hover-white);
     transition: 0.2s ease;
+  }
+
+  :disabled {
+    cursor: default;
+    background-color: var(--hover-white-intense);
+    color: var(--primary-grey);
+    border: none;
+  }
+
+  :hover:disabled {
+    font-weight: inherit;
   }
 `;

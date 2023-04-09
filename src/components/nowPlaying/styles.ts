@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const NowPlayingContainer = styled.div`
   img {
     width: 100%;
+    overflow: hidden;
   }
 
   h2 {

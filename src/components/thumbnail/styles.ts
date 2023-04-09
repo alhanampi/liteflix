@@ -8,7 +8,7 @@ export const ThumbnailContainer = styled.div`
 
   img {
     display: block;
-    height: 150px;
+    height: 130px;
     position: relative;
   }
 

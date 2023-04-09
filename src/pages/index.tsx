@@ -1,3 +1,4 @@
+import AddMovieModal from "@/components/addMovie";
 import Header from "@/components/header";
 import NowPlaying from "@/components/nowPlaying";
 import Popular from "@/components/popular";
@@ -9,6 +10,7 @@ const index = () => {
       <Header />
       <NowPlaying />
       <Popular />
+      <AddMovieModal />
     </div>
   );
 };
