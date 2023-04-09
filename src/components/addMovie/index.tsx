@@ -27,11 +27,16 @@ const AddMovieModal: FC = () => {
     if (file) {
       const reader = new FileReader();
       reader.onload = () => {
-        setMovies((prevMovies) => [
-          ...prevMovies,
-          { title, file: reader.result },
-        ]);
-        localStorage.setItem("movies", JSON.stringify(movies));
+        try {
+          setMovies((prevMovies) => [
+            ...prevMovies,
+            { title, file: reader.result },
+          ]);
+          localStorage.setItem("movies", JSON.stringify(movies));
+        } catch (err) {
+          console.error(err);
+          setError(true);
+        }
       };
       reader.readAsDataURL(file);
     }
