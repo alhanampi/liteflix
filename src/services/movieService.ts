@@ -42,8 +42,14 @@ export const getDetails = async ( movieId: any ): Promise<any> => {
   try {
     const response = await axios.get( `${api}movie/${movieId}?${key}&language=ES` );
     const movie = response.data;
-    console.log( 'route:', `${api}movie/${movieId}?${key}` );
-    console.log( 'movie:', movie );
     return movie;
+  } catch ( error ) { console.log( 'error:', error ); }
+};
+
+export const getSimilarMovies = async ( movieId: any ): Promise<any> => {
+  try {
+    const response = await axios.get( `${api}movie/${movieId}/similar?${key}&language=en-US&page=1` );
+    const { results } = response.data;
+    return results.slice( 0, 60 );
   } catch ( error ) { console.log( 'error:', error ); }
 };
