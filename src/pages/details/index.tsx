@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import { getDetails, getSimilarMovies } from '@/services/movieService';
 import {
-  DetailContainer, Left, Right, Text,
+  DetailContainer, Left, Right, Text, Similar,
 } from './styles';
 import Thumbnail from '../../components/thumbnail';
 import '@splidejs/react-splide/css';
@@ -69,10 +69,10 @@ const MovieDetailPage = () => {
             <p>
               Géneros:
               {' '}
-              {movie.genres.map( ( g: any ) => (
+              {movie.genres.map( ( g: any, i: number ) => (
                 <span key={ g.name }>
                   {g.name}
-                  {' '}
+                  {i !== movie.genres.length - 1 && ' | '}
                 </span>
               ) )}
             </p>
@@ -98,8 +98,8 @@ const MovieDetailPage = () => {
 
       </DetailContainer>
       {similar && (
-      <>
-        <h3>Querés ver algo similar?</h3>
+      <Similar>
+        <h2>Querés ver algo similar?</h2>
         <Splide
           options={ {
             perPage: 4,
@@ -121,7 +121,7 @@ const MovieDetailPage = () => {
             </SplideSlide>
           ) )}
         </Splide>
-      </>
+      </Similar>
       )}
     </>
   );
