@@ -2,33 +2,36 @@ import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 // import { Circles } from 'react-loader-spinner';
-import { getDetails, getSimilarMovies } from '@/services/movieService';
+import { getSeriesDetails, getSeriesEpisodes, getCountryName } from '@/services/movieService';
 import {
   DetailContainer, Left, Right, Similar, NotFound,
-} from './styles';
+} from '../details/styles';
 import Thumbnail from '../../components/thumbnail';
 import '@splidejs/react-splide/css';
 import Header from '@/components/header';
 
-const MovieDetailPage = () => {
+const SeriesDetailPage = () => {
   const router = useRouter();
   const { id } = router.query;
-  const [movie, setMovie] = useState<any>( null );
-  const [similar, setSimilar] = useState<any>( null );
+  const [serie, setSerie] = useState<any>( null );
+  const [episodes, setEpisodes] = useState<any>( null );
+  const [country, setCountry] = useState<string>( '' );
 
   const detail = async () => {
     try {
-      const res = await getDetails( id );
-      setMovie( res );
+      const res = await getSeriesDetails( id );
+      setSerie( res );
+      const countryName = await getCountryName( res.origin_country[0] );
+      setCountry( countryName );
     } catch ( err ) {
       console.log( 'err', err );
     }
   };
 
-  const similarTitles = async () => {
+  const episodeList = async ( id ) => {
     try {
-      const res = await getSimilarMovies( id );
-      setSimilar( res );
+      const res = await getSeriesEpisodes( id );
+      setEpisodes( res );
       console.log( 'similar', res );
     } catch ( err ) {
       console.log( 'err', err );
@@ -36,15 +39,21 @@ const MovieDetailPage = () => {
   };
 
   useEffect( () => {
-    detail();
-    similarTitles();
+    detail( id );
+    episodeList( id );
   }, [] );
 
-  if ( !movie ) {
+  useEffect( () => {
+    if ( country ) {
+      setCountry( country );
+    }
+  }, [country] );
+
+  if ( !serie ) {
     return (
       <NotFound>
         <h3>Ups! Volvé atrás e intentalo nuevamente</h3>
-        <img src="/images/no-image.png" alt="movie not found!" />
+        <img src="/images/no-image.png" alt="serie not found!" />
       </NotFound>
       // implementar spinner mientras cargue:
       // <Circles
@@ -66,57 +75,61 @@ const MovieDetailPage = () => {
       <DetailContainer>
         <Left>
           <img
-            src={ `https://image.tmdb.org/t/p/w500${movie.poster_path}` }
+            src={ `https://image.tmdb.org/t/p/w500${serie.poster_path}` }
             alt="poster"
           />
         </Left>
         <Right>
-          {movie.tagline && (
+          {serie.tagline && (
             <p>
               &quot;
-              {movie.tagline}
+              {serie.tagline}
               &quot;
             </p>
           )}
-          <h2>{movie.title}</h2>
-          {movie.overview && <p>{movie.overview}</p>}
+          <h2>{serie.name}</h2>
+          {serie.overview && <p>{serie.overview}</p>}
 
           <div>
-            {movie.genres && (
+            {serie.genres && (
             <p>
               Géneros:
-              {' '}
-              {movie.genres.map( ( g: any, i: number ) => (
+              {serie.genres.map( ( g: any, i: number ) => (
                 <span key={ g.name }>
                   {g.name}
-                  {i !== movie.genres.length - 1 && ' | '}
+                  {i !== serie.genres.length - 1 && ' | '}
                 </span>
               ) )}
             </p>
             )}
-            {movie.release_date && (
+            {serie.seasons && (
             <p>
               Año:
-              {' '}
-              {movie.release_date.slice( 0, 4 )}
+              {serie.seasons[0].air_date.slice( 0, 4 )}
             </p>
             )}
-            {movie.runtime && (
+            {serie.number_of_episodes && (
             <p>
-              Duración:
-              {' '}
-              {movie.runtime}
-              {' '}
-              minutos
+              Cantidad de episodios:
+              {serie.number_of_episodes}
+              -
+              {serie.number_of_seasons}
+              temporadas
+            </p>
+            )}
+            {country && (
+            <p>
+              País de origen:
+              {country}
             </p>
             )}
           </div>
         </Right>
 
       </DetailContainer>
-      {similar && (
+      {episodes && (
       <Similar>
-        <h2>Querés ver algo similar?</h2>
+        <h2>Temporada 1</h2>
         <Splide
           options={ {
             perPage: 4,
@@ -125,15 +138,13 @@ const MovieDetailPage = () => {
             width: '100%',
           } }
         >
-          {similar.map( ( sim: any ) => (
-            <SplideSlide key={ sim.name }>
+          {episodes.map( ( ep: any ) => (
+            <SplideSlide key={ ep.name }>
               <Thumbnail
-                image={ sim.backdrop_path === null ? '/images/no-image.png'
-                  : `https://image.tmdb.org/t/p/w500${sim.backdrop_path}` }
-                text={ sim.original_title }
-                score={ sim.vote_average }
-                year={ sim.release_date.slice( 0, 4 ) }
-                key={ sim.original_title }
+                image={ ep.still_path === null ? '/images/no-image.png'
+                  : `https://image.tmdb.org/t/p/w500${ep.still_path}` }
+                text={ ep.name }
+                key={ ep.name }
                 size="mid"
               />
             </SplideSlide>
@@ -145,4 +156,4 @@ const MovieDetailPage = () => {
   );
 };
 
-export default MovieDetailPage;
+export default SeriesDetailPage;

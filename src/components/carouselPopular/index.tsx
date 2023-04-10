@@ -41,9 +41,13 @@ const CarouselPopular:FC = () => {
           } }
         >
           {populars.map( ( p: any ) => (
-            <SplideSlide key={ p.name } onClick={ () => navigate( p.id ) }>
+            <SplideSlide
+              key={ p.name }
+              onClick={ () => navigate( p.id ) }
+            >
               <Thumbnail
-                image={ `https://image.tmdb.org/t/p/w500${p.backdrop_path}` }
+                image={ p.backdrop_path === null ? '/images/no-image.png'
+                  : `https://image.tmdb.org/t/p/w500${p.backdrop_path}` }
                 text={ p.original_title }
                 score={ p.vote_average }
                 year={ p.release_date.slice( 0, 4 ) }
