@@ -9,8 +9,16 @@ export const ThumbnailContainer = styled.div`
 
   img {
     display: block;
-    height: 130px;
+    height: 120px;
     position: relative;
+
+    &.big {
+      height: 200px;
+    }
+
+    &.mid {
+      height: 140px;
+    }
   }
 
   h3 {

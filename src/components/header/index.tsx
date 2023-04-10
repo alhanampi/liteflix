@@ -44,13 +44,13 @@ const Header: FC = () => {
       <Right>
         {showOptionsModal && (
           <IoMdClose
-            size={ 25 }
+            size={ 35 }
             onClick={ () => setShowOptionsModal( !showOptionsModal ) }
             className="closeButton show"
           />
         )}
-        <HiMenuAlt3 size={ 25 } onClick={ showCloseButton } />
-        <BsBell size={ 25 } />
+        <HiMenuAlt3 size={ 35 } onClick={ showCloseButton } />
+        <BsBell size={ 35 } />
         <img src="/images/user.jpg" alt="avatar" />
       </Right>
 

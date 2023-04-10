@@ -10,14 +10,15 @@ export interface IThumbnail {
   text: string;
   score?: number;
   year?: string;
+  size?: string;
 }
 
 const Thumbnail: FC<IThumbnail> = ( {
-  image, text, score, year,
+  image, text, score, year, size,
 } ) => (
   <ThumbnailContainer>
     <span>
-      <img src={ image } alt="thumbnail" />
+      <img src={ image } alt="thumbnail" className={ size && size } />
     </span>
     <h3>{text}</h3>
     <BsPlayCircle className="play" />

@@ -24,10 +24,29 @@ const Dropdown: FC = () => {
     <DropdownContainer>
       <ul>
         <li>Inicio</li>
-        <li>Series</li>
+        <li
+          onClick={ (): void => handleSectionClick( 'series' ) }
+          onKeyDown={ ( event ): void => {
+            if ( event.key === 'Enter' || event.key === ' ' ) {
+              handleSectionClick( 'series' );
+            }
+          } }
+        >
+          Series
+        </li>
         <li>Películas</li>
         <li>Agregadas recientemente</li>
-        <li>populares</li>
+        <li
+          onClick={ (): void => handleSectionClick( 'populares' ) }
+          onKeyDown={ ( event ): void => {
+            if ( event.key === 'Enter' || event.key === ' ' ) {
+              handleSectionClick( 'populares' );
+            }
+          } }
+        >
+          populares
+
+        </li>
         {/* cambiar a a o button */}
         <li
           onClick={ () => handleSectionClick( 'misPeliculas' ) }

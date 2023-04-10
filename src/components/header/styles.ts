@@ -8,7 +8,7 @@ export const HeaderContainer = styled.div`
   justify-content: space-between;
   padding: 0 4em;
   z-index: 20;
-  width: 90%;
+  width: 100%;
   
   /* ajustar visual para mobile completamente */
   @media (max-width: 768px) and (orientation: portrait) {
