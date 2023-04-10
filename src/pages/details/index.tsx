@@ -1,12 +1,14 @@
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
+// import { Circles } from 'react-loader-spinner';
 import { getDetails, getSimilarMovies } from '@/services/movieService';
 import {
-  DetailContainer, Left, Right, Text, Similar,
+  DetailContainer, Left, Right, Similar, NotFound,
 } from './styles';
 import Thumbnail from '../../components/thumbnail';
 import '@splidejs/react-splide/css';
+import Header from '@/components/header';
 
 const MovieDetailPage = () => {
   const router = useRouter();
@@ -39,13 +41,28 @@ const MovieDetailPage = () => {
   }, [] );
 
   if ( !movie ) {
-    // Render a loading indicator or message here
-    return <div>Loading...</div>;
+    return (
+      <NotFound>
+        <h3>Ups! Volvé atrás e intentalo nuevamente</h3>
+        <img src="/images/no-image.png" alt="movie not found!" />
+      </NotFound>
+      // implementar spinner mientras cargue:
+      // <Circles
+      //   height="120"
+      //   width="120"
+      //   color="rgb(100, 238, 188)"
+      //   ariaLabel="circles-loading"
+      //   wrapperStyle={ {} }
+      //   wrapperClass=""
+      //   visible
+      // />
+    );
   }
 
   return (
     <>
-      <Text onClick={ () => router.back() }>Volver al home!</Text>
+      <Header mainPage={ false } />
+      
       <DetailContainer>
         <Left>
           <img

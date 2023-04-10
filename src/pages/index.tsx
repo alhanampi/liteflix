@@ -18,7 +18,7 @@ const Index: FC<IIndexProps> = ( { showModal } ) => {
   return (
 
     <>
-      <Header />
+      <Header mainPage />
       <NowPlaying />
       <Popular />
       {showModal && <AddMovieModal />}

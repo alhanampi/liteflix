@@ -11,12 +11,18 @@ export interface IThumbnail {
   score?: number;
   year?: string;
   size?: string;
+  onClick?: any;
 }
 
 const Thumbnail: FC<IThumbnail> = ( {
-  image, text, score, year, size,
+  image,
+  text,
+  score,
+  year,
+  size,
+  onClick,
 } ) => (
-  <ThumbnailContainer>
+  <ThumbnailContainer onClick={ onClick }>
     <span>
       <img src={ image } alt="thumbnail" className={ size && size } />
     </span>
@@ -34,7 +40,9 @@ const Thumbnail: FC<IThumbnail> = ( {
           <p>{year}</p>
         </div>
       </div>
-    ) : <></>}
+    ) : (
+      <></>
+    )}
   </ThumbnailContainer>
 );
 

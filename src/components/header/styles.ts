@@ -95,3 +95,10 @@ export const Right = styled.div`
     }
   }
 `;
+
+export const ReturnText = styled.p`
+  font-size: 1.4em;
+  text-decoration: none;
+  text-align: right;
+  cursor: pointer;
+`;

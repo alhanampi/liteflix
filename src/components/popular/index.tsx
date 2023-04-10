@@ -2,11 +2,13 @@
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 import { FC, useEffect, useState } from 'react';
 import { BsChevronDown, BsChevronUp } from 'react-icons/bs';
+import { useRouter } from 'next/router';
 import { getPopular } from '@/services/movieService';
 import { PopularContainer } from './styles';
 import Thumbnail from '../thumbnail';
 
 const Popular: FC = () => {
+  const router = useRouter();
   const [popular, setPopular] = useState<any>( [] );
   const [showPopular, setShowPopular] = useState<boolean>( false );
 
@@ -19,6 +21,14 @@ const Popular: FC = () => {
         console.log( err );
       } );
   }, [] );
+
+  const navigate = ( id: number ): void => {
+    console.log( id );
+    router.push( {
+      pathname: '/details/',
+      query: { id },
+    } );
+  };
 
   return (
     <div>
@@ -38,6 +48,7 @@ const Popular: FC = () => {
                 score={ p.vote_average }
                 year={ p.release_date.slice( 0, 4 ) }
                 key={ p.original_title }
+                onClick={ () => navigate( p.id ) }
               />
             ) )}
           </div>
