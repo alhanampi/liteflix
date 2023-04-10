@@ -4,19 +4,26 @@ import NowPlaying from '@/components/nowPlaying';
 import Popular from '@/components/popular';
 import AddMovieModal from '@/components/addMovie';
 import { LiteFlixContext, LiteFlixProvider } from '../context';
+import MyMovies from '@/components/myMovies';
 
 interface IIndexProps {
   showModal: boolean;
 }
 
-const Index: FC<IIndexProps> = ( { showModal } ) => (
-  <>
-    <Header />
-    <NowPlaying />
-    <Popular />
-    {showModal && <AddMovieModal />}
-  </>
-);
+const Index: FC<IIndexProps> = ( { showModal } ) => {
+  const movies = typeof window !== 'undefined' && localStorage.getItem( 'movies' );
+  const myMoviesExist = Boolean( movies );
+  return (
+
+    <>
+      <Header />
+      <NowPlaying />
+      <Popular />
+      {showModal && <AddMovieModal />}
+      {myMoviesExist && <MyMovies />}
+    </>
+  );
+};
 
 const IndexWithProvider: FC = () => {
   const { showModal } = useContext( LiteFlixContext );

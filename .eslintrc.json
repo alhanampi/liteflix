@@ -7,7 +7,8 @@
   ],
   "plugins": [
     "@typescript-eslint",
-    "react"
+    "react", 
+    "import"
   ],
   "rules": {
     "linebreak-style": "off",
@@ -19,7 +20,8 @@
     "import/extensions": "off",
     "import/no-unresolved": "off",
     "react/function-component-definition": "off", // disable the 'Function component is not a function declaration' rule
-    "react/react-in-jsx-scope": "off" // disable the 'React must be in scope when using JSX' rule
+    "react/react-in-jsx-scope": "off", // disable the 'React must be in scope when using JSX' rule
+    "import/no-extraneous-dependencies": "off"
   },
   "settings": {
     "react": {

@@ -18,6 +18,7 @@ const GlobalStyle = createGlobalStyle`
     color: var(--primary-white);
     font-weight: 400;
     margin: 0;
+    height: 100vh;
   }
 `;
 

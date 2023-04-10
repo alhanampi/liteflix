@@ -9,6 +9,19 @@ export const HeaderContainer = styled.div`
   padding: 0 4em;
   z-index: 20;
   width: 90%;
+  
+  /* ajustar visual para mobile completamente */
+  @media (max-width: 768px) and (orientation: portrait) {
+    width: 80%;
+  }
+
+  @media (max-width: 420px) and (orientation: portrait) {
+    width: 60%;
+  }
+  
+  @media (max-width: 390px) and (orientation: portrait) {
+  width: 40%;
+  }
 `;
 
 export const Logo = styled.h1`

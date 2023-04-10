@@ -1,3 +1,5 @@
+/* eslint-disable react/require-default-props */
+/* eslint-disable react/jsx-no-useless-fragment */
 import { FC } from 'react';
 import { BsPlayCircle } from 'react-icons/bs';
 import { AiFillStar } from 'react-icons/ai';
@@ -6,8 +8,8 @@ import { ThumbnailContainer } from './styles';
 export interface IThumbnail {
   image: string;
   text: string;
-  score: number;
-  year: string;
+  score?: number;
+  year?: string;
 }
 
 const Thumbnail: FC<IThumbnail> = ( {
@@ -20,16 +22,18 @@ const Thumbnail: FC<IThumbnail> = ( {
     <h3>{text}</h3>
     <BsPlayCircle className="play" />
 
-    <div className="hover">
-      <div className="scoreContainer">
-        <span>
-          <AiFillStar className="star" />
-          {' '}
-          <p>{score}</p>
-        </span>
-        <p>{year}</p>
+    {score && year ? (
+      <div className="hover">
+        <div className="scoreContainer">
+          <span>
+            <AiFillStar className="star" />
+            {' '}
+            <p>{score}</p>
+          </span>
+          <p>{year}</p>
+        </div>
       </div>
-    </div>
+    ) : <></>}
   </ThumbnailContainer>
 );
 
