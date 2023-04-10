@@ -27,6 +27,7 @@ const CarouselSeries:FC = () => {
             drag: 'free',
             rewind: true,
             width: '100%',
+            gap: '2em',
           } }
         >
           {series.map( ( serie: any ) => (

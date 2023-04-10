@@ -13,7 +13,7 @@ export const ThumbnailContainer = styled.div`
     position: relative;
 
     &.big {
-      height: 200px;
+      height: 300px;
     }
 
     &.mid {

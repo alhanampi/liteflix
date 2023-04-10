@@ -7,10 +7,18 @@ export const DetailContainer = styled.div`
 `;
 
 export const Text = styled.h3`
-  font-family: "Edu NSW ACT Foundation", cursive;
   font-size: 2em;
   padding: 0 3em;
   text-decoration: none;
   text-align: right;
   cursor: pointer;
+`;
+
+export const Left = styled.div`
+`;
+
+export const Right = styled.div`
+`;
+
+export const Down = styled.div`
 `;

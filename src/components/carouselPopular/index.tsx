@@ -1,10 +1,10 @@
 import { FC, useEffect, useState } from 'react';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
+import { useRouter } from 'next/router';
 import Thumbnail from '../thumbnail';
 import { MyMoviesContainer, Title } from '../myMovies/styles';
 import { getPopularExtra } from '@/services/movieService';
 import '@splidejs/react-splide/css';
-import { useRouter } from 'next/router';
 
 const CarouselPopular:FC = () => {
   const router = useRouter();
@@ -34,7 +34,7 @@ const CarouselPopular:FC = () => {
       <MyMoviesContainer>
         <Splide
           options={ {
-            perPage: 4,
+            perPage: 6,
             drag: 'free',
             rewind: true,
             width: '100%',
