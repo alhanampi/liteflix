@@ -1,3 +1,4 @@
+/* eslint-disable no-shadow */
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
@@ -28,7 +29,7 @@ const SeriesDetailPage = () => {
     }
   };
 
-  const episodeList = async ( id ) => {
+  const episodeList = async ( id: any ) => {
     try {
       const res = await getSeriesEpisodes( id );
       setEpisodes( res );
@@ -39,7 +40,7 @@ const SeriesDetailPage = () => {
   };
 
   useEffect( () => {
-    detail( id );
+    detail();
     episodeList( id );
   }, [] );
 

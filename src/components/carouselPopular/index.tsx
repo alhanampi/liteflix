@@ -30,7 +30,7 @@ const CarouselPopular:FC = () => {
 
   return (
     <>
-      <Title id="populares">Popular Titles</Title>
+      <Title id="populares">Películas Populares</Title>
       <MyMoviesContainer>
         <Splide
           options={ {
@@ -49,8 +49,8 @@ const CarouselPopular:FC = () => {
                 image={ p.backdrop_path === null ? '/images/no-image.png'
                   : `https://image.tmdb.org/t/p/w500${p.backdrop_path}` }
                 text={ p.original_title }
-                score={ p.vote_average }
-                year={ p.release_date.slice( 0, 4 ) }
+                score={ p.vote_average && p.vote_average }
+                year={ p.release_date && p.release_date.slice( 0, 4 ) }
                 key={ p.original_title }
                 size="mid"
               />

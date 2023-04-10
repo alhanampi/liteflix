@@ -9,7 +9,7 @@ export const PopularContainer = styled.div`
 
   h2 {
     font-weight: 400;
-    text-align: center;
+    text-align: right;
     letter-spacing: 3px;
     cursor: pointer;
 

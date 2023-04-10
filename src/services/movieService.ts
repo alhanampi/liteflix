@@ -78,10 +78,9 @@ export const getSeriesDetails = async ( seriesId: any ): Promise<any> => {
 };
 
 export const getSeriesEpisodes = async ( tvShowId: string ): Promise<any> => {
-  console.log(`${api}tv/${tvShowId}/season/1?${key}` );
+  console.log( `${api}tv/${tvShowId}/season/1?${key}` );
   try {
     const response = await axios.get( `${api}tv/${tvShowId}/season/1?${key}` );
-    console.log('response', response);
     const { episodes } = response.data;
     console.log( episodes );
     return episodes;
