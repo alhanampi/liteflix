@@ -15,7 +15,7 @@ export const MyMovies = () => {
 
   return (
     <>
-      <Title>Mis películas</Title>
+      <Title id="misPeliculas">Mis películas</Title>
       <MyMoviesContainer>
         {movies.map( ( movie: any ) => (
           <Thumbnail key={ movie.title } text={ movie.title } image={ movie.file } />
