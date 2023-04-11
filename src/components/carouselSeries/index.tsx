@@ -39,6 +39,17 @@ const CarouselSeries:FC = () => {
             rewind: true,
             width: '100%',
             gap: '2em',
+            breakpoints: {
+              1536: {
+                perPage: 5,
+              },
+              1280: {
+                perPage: 4,
+              },
+              768: {
+                perPage: 3,
+              },
+            },
           } }
         >
           {series.map( ( serie: any ) => (

@@ -83,7 +83,7 @@ export const getSeriesEpisodes = async ( tvShowId: string ): Promise<any> => {
     const response = await axios.get( `${api}tv/${tvShowId}/season/1?${key}` );
     const { episodes } = response.data;
     console.log( episodes );
-    return episodes;
+    return episodes.slice( 0, 40 );
   } catch ( error ) {
     throw new Error( `Failed to fetch: ${error}` );
   }

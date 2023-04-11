@@ -33,7 +33,6 @@ const SeriesDetailPage = () => {
     try {
       const res = await getSeriesEpisodes( id );
       setEpisodes( res );
-      console.log( 'similar', res );
     } catch ( err ) {
       console.log( 'err', err );
     }
@@ -52,20 +51,13 @@ const SeriesDetailPage = () => {
 
   if ( !serie ) {
     return (
-      <NotFound>
-        <h3>Ups! Volvé atrás e intentalo nuevamente</h3>
-        <img src="/images/no-image.png" alt="serie not found!" />
-      </NotFound>
-      // implementar spinner mientras cargue:
-      // <Circles
-      //   height="120"
-      //   width="120"
-      //   color="rgb(100, 238, 188)"
-      //   ariaLabel="circles-loading"
-      //   wrapperStyle={ {} }
-      //   wrapperClass=""
-      //   visible
-      // />
+      <>
+        <Header mainPage={ false } />
+        <NotFound>
+          <h3>Ups! Volvé atrás e intentalo nuevamente</h3>
+          <img src="/images/no-image.png" alt="serie not found!" />
+        </NotFound>
+      </>
     );
   }
 
@@ -133,10 +125,18 @@ const SeriesDetailPage = () => {
         <h2>Temporada 1</h2>
         <Splide
           options={ {
-            perPage: 4,
+            perPage: 6,
             drag: 'free',
             rewind: true,
             width: '100%',
+            breakpoints: {
+              1536: {
+                perPage: 5,
+              },
+              1280: {
+                perPage: 3,
+              },
+            },
           } }
         >
           {episodes.map( ( ep: any ) => (

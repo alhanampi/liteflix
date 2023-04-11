@@ -1,3 +1,3 @@
-const nextConfig = {
-  reactStrictMode: true,
-}
+module.exports = {
+  /* config options here */
+};

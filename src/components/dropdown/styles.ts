@@ -42,4 +42,26 @@ export const DropdownContainer = styled.div`
     margin: 9% 0;
     font-weight: 400;
   }
+
+  @media (max-width: 1536px) {
+    height: 60vh;
+  }
+
+  @media (max-width: 1366px) {
+    
+  }
+
+  @media (max-width: 1280px) {
+    height: 55vh;
+  }
+
+  @media (max-width: 1024px) {
+    width: 30%;
+    height: 58vh;
+    li{
+      font-size: 1em;
+    }
+  }
+
+//hacer un drop diferente de 1024 para abajo
 `;

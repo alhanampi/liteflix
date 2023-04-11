@@ -20,6 +20,7 @@ export const NotFound = styled.div`
 export const DetailContainer = styled.div`
   display: flex;
   align-items: center;
+  padding-top: 5em;
 `;
 
 export const Left = styled.div`

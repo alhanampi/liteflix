@@ -38,6 +38,17 @@ const CarouselPopular:FC = () => {
             drag: 'free',
             rewind: true,
             width: '100%',
+            breakpoints: {
+              1536: {
+                perPage: 5,
+              },
+              1280: {
+                perPage: 4,
+              },
+              768: {
+                perPage: 3,
+              },
+            },
           } }
         >
           {populars.map( ( p: any ) => (

@@ -96,10 +96,14 @@ export const ButtonContainer = styled.div`
   left: 8%;
   width: 70%;
 
+  @media (max-width: 1566px) {
+    top: 80%;
+    width: 50%;
+  }
+
   @media (max-width: 1024px) {
     top: 80%;
     width: 50%;
-    /* ajustar este tamaño en el comp */
   }
 
   @media (max-width: 420px) and (orientation: portrait) {
