@@ -6,7 +6,7 @@ export const DropdownContainer = styled.div`
   top: 5em;
   right: 0em;
   background-color: var(--primary-grey-transparent);
-  height: 55vh;
+  height: 60vh;
   width: 25%;
   z-index: 15;
   padding: 2% 4%;

@@ -35,7 +35,17 @@ const Dropdown: FC = () => {
           Series
         </li>
         <li>Películas</li>
-        <li>Agregadas recientemente</li>
+        <li
+          onClick={ (): void => handleSectionClick( 'latest' ) }
+          onKeyDown={ ( event ): void => {
+            if ( event.key === 'Enter' || event.key === ' ' ) {
+              handleSectionClick( 'latest' );
+            }
+          } }
+        >
+          Agregadas recientemente
+
+        </li>
         <li
           onClick={ (): void => handleSectionClick( 'populares' ) }
           onKeyDown={ ( event ): void => {

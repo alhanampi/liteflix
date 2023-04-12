@@ -7,6 +7,7 @@ import { LiteFlixContext, LiteFlixProvider } from '../context';
 import MyMovies from '@/components/myMovies';
 import CarouselSeries from '@/components/carouselSeries';
 import CarouselPopular from '@/components/carouselPopular';
+import CarouselLatest from '@/components/carouselLatest';
 
 interface IIndexProps {
   showModal: boolean;
@@ -25,6 +26,7 @@ const Index: FC<IIndexProps> = ( { showModal } ) => {
       {myMoviesExist && <MyMovies />}
       <CarouselSeries />
       <CarouselPopular />
+      <CarouselLatest />
     </>
   );
 };

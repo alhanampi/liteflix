@@ -55,6 +55,16 @@ export const getSimilarMovies = async ( movieId: any ): Promise<any> => {
   }
 };
 
+export const getLatest = async (): Promise<any> => {
+  try {
+    const response = await axios.get( `${api}movie/now_playing?${key}&language=en-US&page=1` );
+    const { results } = response.data;
+    return results;
+  } catch ( error ) {
+    throw new Error( `Failed to fetch: ${error}` );
+  }
+};
+
 // series
 
 export const getSeries = async (): Promise<any> => {
