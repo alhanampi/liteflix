@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
 export const NowPlayingContainer = styled.div`
+position: relative;
+
   img {
     width: 100%;
     overflow: hidden;

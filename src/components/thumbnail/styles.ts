@@ -6,6 +6,15 @@ export const ThumbnailContainer = styled.div`
   margin: 2em;
   position: relative;
   transition: filter 0.5s ease;
+  filter: drop-shadow(4px 3px 3px var(--hover-white));
+
+  .heart  {
+    position: absolute;
+    top: 0;
+    right: -1.5em;
+    color: var(--primary-white);
+    z-index: 20;
+  };
 
   img {
     display: block;
@@ -17,7 +26,7 @@ export const ThumbnailContainer = styled.div`
     }
 
     &.mid {
-      height: 140px;
+      height: 120px;
     }
   }
 

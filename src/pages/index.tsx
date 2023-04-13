@@ -8,6 +8,7 @@ import MyMovies from '@/components/myMovies';
 import CarouselSeries from '@/components/carouselSeries';
 import CarouselPopular from '@/components/carouselPopular';
 import CarouselLatest from '@/components/carouselLatest';
+import Footer from '@/components/footer';
 
 interface IIndexProps {
   showModal: boolean;
@@ -27,6 +28,7 @@ const Index: FC<IIndexProps> = ( { showModal } ) => {
       <CarouselSeries />
       <CarouselPopular />
       <CarouselLatest />
+      <Footer />
     </>
   );
 };

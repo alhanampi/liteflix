@@ -11,13 +11,15 @@ const CarouselSeries:FC = () => {
   const [series, setSeries] = useState<any>( [] );
 
   useEffect( () => {
-    getSeries()
-      .then( ( res: any ) => {
+    async function getData() {
+      try {
+        const res = await getSeries();
         setSeries( res );
-      } )
-      .catch( ( err: any ) => {
+      } catch ( err ) {
         console.log( err );
-      } );
+      }
+    }
+    getData();
   }, [] );
 
   const navigateToSeries = ( id: number ): void => {

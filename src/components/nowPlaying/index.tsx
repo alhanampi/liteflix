@@ -13,13 +13,16 @@ const NowPlaying: FC = () => {
   const [nowPlaying, setNowPlaying] = useState<any>( [] );
 
   useEffect( () => {
-    getNowPlaying()
-      .then( ( res ) => {
+    const getPlaying = async () => {
+      try {
+        const res = await getNowPlaying();
         setNowPlaying( res );
-      } )
-      .catch( ( err ) => {
+      } catch ( err ) {
         console.log( err );
-      } );
+      }
+    };
+
+    getPlaying();
   }, [] );
 
   const navigate = ( id: number ): void => {

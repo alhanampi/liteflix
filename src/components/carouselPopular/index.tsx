@@ -11,13 +11,15 @@ const CarouselPopular:FC = () => {
   const [populars, setPopulars] = useState<any>( [] );
 
   useEffect( () => {
-    getPopularExtra()
-      .then( ( res: any ) => {
+    async function getData() {
+      try {
+        const res = await getPopularExtra();
         setPopulars( res );
-      } )
-      .catch( ( err: any ) => {
+      } catch ( err ) {
         console.log( err );
-      } );
+      }
+    }
+    getData();
   }, [] );
 
   const navigate = ( id: number ): void => {

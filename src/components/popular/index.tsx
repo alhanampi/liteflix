@@ -13,13 +13,15 @@ const Popular: FC = () => {
   const [showPopular, setShowPopular] = useState<boolean>( false );
 
   useEffect( () => {
-    getPopular()
-      .then( ( res ) => {
+    const getPopularMovies = async () => {
+      try {
+        const res = await getPopular();
         setPopular( res );
-      } )
-      .catch( ( err ) => {
+      } catch ( err ) {
         console.log( err );
-      } );
+      }
+    };
+    getPopularMovies();
   }, [] );
 
   const navigate = ( id: number ): void => {

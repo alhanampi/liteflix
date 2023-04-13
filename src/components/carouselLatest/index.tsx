@@ -11,13 +11,16 @@ const CarouselLatest:FC = () => {
   const [latest, setLatest] = useState<any>( [] );
 
   useEffect( () => {
-    getLatest()
-      .then( ( res: any ) => {
+    const getData = async () => {
+      try {
+        const res = await getLatest();
         setLatest( res );
-      } )
-      .catch( ( err: any ) => {
+      } catch ( err ) {
         console.log( err );
-      } );
+      }
+    };
+
+    getData();
   }, [] );
 
   const navigate = ( id: number ): void => {

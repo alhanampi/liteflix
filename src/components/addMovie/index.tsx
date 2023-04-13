@@ -33,7 +33,7 @@ const AddMovieModal: FC = () => {
     setshowAdd( false );
     if ( file ) {
       const reader = new FileReader();
-      reader.onload = () => {
+      reader.onload = async () => {
         try {
           setMovies( ( prevMovies ) => [
             ...prevMovies,
@@ -128,7 +128,12 @@ const AddMovieModal: FC = () => {
               type="text"
               id="inputTitle"
               placeholder="título"
-              onChange={ ( e: any ) => setTitle( e.target.value ) }
+              onChange={ ( e: React.ChangeEvent<HTMLInputElement> ) => setTitle( e.target.value ) }
+              onKeyDown={ ( e: React.KeyboardEvent<HTMLInputElement> ) => {
+                if ( e.key === 'Enter' ) {
+                  upload();
+                }
+              } }
               value={ title }
             />
           </label>

@@ -2,14 +2,16 @@
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
-// import { Circles } from 'react-loader-spinner';
 import { getSeriesDetails, getSeriesEpisodes, getCountryName } from '@/services/movieService';
 import {
-  DetailContainer, Left, Right, Similar, NotFound,
+  DetailContainer, Left, Right, Similar,
 } from '../details/styles';
 import Thumbnail from '../../components/thumbnail';
 import '@splidejs/react-splide/css';
 import Header from '@/components/header';
+import Footer from '@/components/footer';
+import LoadError from '@/components/loadError';
+import Loader from '@/components/loader';
 
 const SeriesDetailPage = () => {
   const router = useRouter();
@@ -17,6 +19,8 @@ const SeriesDetailPage = () => {
   const [serie, setSerie] = useState<any>( null );
   const [episodes, setEpisodes] = useState<any>( null );
   const [country, setCountry] = useState<string>( '' );
+  const [loading, setLoading] = useState<boolean>( true );
+  const [error, setError] = useState<boolean>( false );
 
   const detail = async () => {
     try {
@@ -24,8 +28,11 @@ const SeriesDetailPage = () => {
       setSerie( res );
       const countryName = await getCountryName( res.origin_country[0] );
       setCountry( countryName );
+      setLoading( false );
     } catch ( err ) {
       console.log( 'err', err );
+      setError( true );
+      setLoading( false );
     }
   };
 
@@ -49,22 +56,21 @@ const SeriesDetailPage = () => {
     }
   }, [country] );
 
-  if ( !serie ) {
+  if ( loading ) {
     return (
-      <>
-        <Header mainPage={ false } />
-        <NotFound>
-          <h3>Ups! Volvé atrás e intentalo nuevamente</h3>
-          <img src="/images/no-image.png" alt="serie not found!" />
-        </NotFound>
-      </>
+      <Loader />
+    );
+  }
+
+  if ( error ) {
+    return (
+      <LoadError />
     );
   }
 
   return (
     <>
       <Header mainPage={ false } />
-
       <DetailContainer>
         <Left>
           <img
@@ -153,6 +159,7 @@ const SeriesDetailPage = () => {
         </Splide>
       </Similar>
       )}
+      <Footer />
     </>
   );
 };
