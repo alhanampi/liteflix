@@ -9,14 +9,14 @@ Challenge project for Litebox.
 
 ## Installation
 
-This is a nextJS project, so all you have to do is clone it and then
+This is a nextJS project, so all you have to do is clone it and then,
 
 ```bash
   npm i
   npm run dev
 ```
 
-And done! you have it all set
+And done! you have it all set.
     
 ## Tech Stack
 
@@ -46,3 +46,5 @@ If time is on my side... a lot!
 - More animations!
 - Series episodes separated by seasons.
 - User profiles.
+- Testing! oh god, so much to test, so little time.
+- Screenshots.
