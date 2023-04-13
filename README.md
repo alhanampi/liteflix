@@ -1,38 +1,48 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+# Liteflix
 
-First, run the development server:
+Challenge project for Litebox.
+
+
+
+
+
+## Installation
+
+This is a nextJS project, so all you have to do is clone it and then
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+  npm i
+  npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+And done! you have it all set
+    
+## Tech Stack
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+NextJS, axios, eslint, styled components, typeScript and more!
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Features
 
-## Learn More
+- Fully configured linter.
+- Services separated in an unified folder so they could be edited at any time.
+- Details screens for movies and series, complete with a fully functional navigation.
+- Error handling for said screens.
+- A fully customized progress bar, with features such as: adding files, removing them, saving to localStorage.
+- Shared info saved to context.
+- Interfaces for shared data.
+- Reusable components for ease of scalability.
+- And more!
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## What's to come?
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+If time is on my side... a lot! 
+- A node backend, so real users can be created, and the custom movies can be stored in a DB.
+- Save to favorites, clicking on a heart icon, and of course, also removing them!
+- Languages! i18n seems to be trickier on nextJS than it is on React.
+- More animations!
+- Series episodes separated by seasons.
+- User profiles.
