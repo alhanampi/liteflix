@@ -21,11 +21,11 @@ export const MyMovies = () => {
         {movies.length > 5 ? (
           <Splide
             options={ {
-              perPage: 4,
               drag: 'free',
               gap: '1em',
               rewind: true,
               width: '100%',
+              autoWidth: true,
             } }
           >
             {movies.map( ( movie: any ) => (
@@ -34,6 +34,7 @@ export const MyMovies = () => {
                   key={ movie.title }
                   text={ movie.title }
                   image={ movie.file }
+                  movie
                 />
               </SplideSlide>
             ) )}
@@ -44,6 +45,7 @@ export const MyMovies = () => {
               key={ movie.title }
               text={ movie.title }
               image={ movie.file }
+              movie
             />
           ) )
         )}

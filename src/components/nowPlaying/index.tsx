@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 import { FC, useEffect, useState } from 'react';
-import { BiPlay } from 'react-icons/bi';
+import { BsPlay } from 'react-icons/bs';
 import { VscAdd } from 'react-icons/vsc';
 import { useRouter } from 'next/router';
 import { getNowPlaying } from '@/services/movieService';
@@ -42,13 +42,13 @@ const NowPlaying: FC = () => {
       <h2>{nowPlaying.original_title}</h2>
       <p>
         Original de
-        {' '}
+        &nbsp;
         <span> LITEFLIX</span>
       </p>
       <ButtonContainer>
         <Button
           text="Reproducir"
-          icon={ <BiPlay /> }
+          icon={ <BsPlay /> }
           onClick={ () => navigate( nowPlaying.id ) }
           variation
         />

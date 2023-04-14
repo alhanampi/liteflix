@@ -37,21 +37,10 @@ const CarouselLatest:FC = () => {
       <MyMoviesContainer>
         <Splide
           options={ {
-            perPage: 6,
             drag: 'free',
             rewind: true,
             width: '100%',
-            breakpoints: {
-              1536: {
-                perPage: 5,
-              },
-              1280: {
-                perPage: 4,
-              },
-              768: {
-                perPage: 3,
-              },
-            },
+            autoWidth: true,
           } }
         >
           {latest.map( ( p: any ) => (
@@ -67,6 +56,7 @@ const CarouselLatest:FC = () => {
                 year={ p.release_date && p.release_date.slice( 0, 4 ) }
                 key={ p.original_title }
                 size="mid"
+                movie
               />
             </SplideSlide>
           ) )}

@@ -36,22 +36,11 @@ const CarouselSeries:FC = () => {
       <MyMoviesContainer>
         <Splide
           options={ {
-            perPage: 6,
             drag: 'free',
             rewind: true,
             width: '100%',
+            autoWidth: true,
             gap: '2em',
-            breakpoints: {
-              1536: {
-                perPage: 5,
-              },
-              1280: {
-                perPage: 4,
-              },
-              768: {
-                perPage: 3,
-              },
-            },
           } }
         >
           {series.map( ( serie: any ) => (
@@ -67,6 +56,7 @@ const CarouselSeries:FC = () => {
                 score={ serie.vote_average }
                 year={ serie.first_air_date.slice( 0, 4 ) }
                 size="big"
+                movie={ false }
               />
             </SplideSlide>
           ) )}

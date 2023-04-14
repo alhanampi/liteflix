@@ -8,8 +8,8 @@ const Footer = () => (
     <Left>
       <p>
         Hecho por Pam para
-        {' '}
-        {' '}
+        &nbsp;
+        &nbsp;
         <span>Litebox</span>
       </p>
     </Left>

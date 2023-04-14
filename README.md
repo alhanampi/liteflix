@@ -36,6 +36,23 @@ NextJS, axios, eslint, styled components, typeScript and more!
 - Reusable components for ease of scalability.
 - And more!
 
+## Which screen sizes was this tested on?
+
+I tried to test it in the most common screen sizes, so it should work on:
+
+| width | height |
+|-------|--------|
+| 1920  | 1080   |
+| 1536  |  864   |
+| 1366  |  768   |
+| 1280  |  720   |
+| 1024  |  600   |
+|  412  |  915   |
+|  393  |  873   |
+|  360  |  800   |
+|  360  |  780   |
+|  360  |  640   |
+
 
 ## What's to come?
 
@@ -43,6 +60,7 @@ If time is on my side... a lot!
 - A node backend, so real users can be created, and the custom movies can be stored in a DB.
 - Save to favorites, clicking on a heart icon, and of course, also removing them!
 - Languages! i18n seems to be trickier on nextJS than it is on React.
+- Infinite click on thumbnails: for now it works only for the main screens, but it should work for the recommended series and movies too!
 - More animations!
 - Series episodes separated by seasons.
 - User profiles.

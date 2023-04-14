@@ -37,43 +37,47 @@ const Header: FC<IHeader> = ( { mainPage } ) => {
 
   return (
     <HeaderContainer>
-      <Left>
-        <Link href="/">
-          <Logo>
-            Lite
-            {' '}
-            <span> flix </span>
-          </Logo>
-        </Link>
-        {mainPage && (
+      <div className="desktop">
+        <Left>
+          <Link href="/">
+            <Logo>
+              Lite
+              <span> flix </span>
+            </Logo>
+          </Link>
+          {mainPage && (
           <p onClick={ addMovie }>
             <VscAdd />
             Agregar película
           </p>
-        )}
-      </Left>
+          )}
+        </Left>
 
-      <Right>
-        {showOptionsModal && (
+        <Right>
+          {showOptionsModal && (
           <IoMdClose
             size={ 35 }
             onClick={ () => setShowOptionsModal( !showOptionsModal ) }
             className="closeButton show"
           />
-        )}
-        {mainPage ? (
-          <>
-            <HiMenuAlt3 size={ 35 } onClick={ showCloseButton } />
-            <BsBell size={ 35 } />
-          </>
-        ) : (
-          <ReturnText onClick={ () => router.back() }>Volver al home!</ReturnText>
-        )}
+          )}
+          {mainPage ? (
+            <>
+              <HiMenuAlt3 size={ 35 } onClick={ showCloseButton } />
+              <BsBell size={ 35 } />
+            </>
+          ) : (
+            <ReturnText onClick={ () => router.back() }>Volver al home!</ReturnText>
+          )}
 
-        <img src="/images/user.jpg" alt="avatar" />
-      </Right>
+          <img src="/images/user.jpg" alt="avatar" />
+        </Right>
 
-      {showOptionsModal && <Dropdown />}
+        {showOptionsModal && <Dropdown />}
+      </div>
+      <div className="mobile">
+        este es el header mobile
+      </div>
     </HeaderContainer>
   );
 };

@@ -11,7 +11,7 @@ const ProgressBar: FC<IProgressBar> = ( { completed, color, cancelUpload } ) => 
   <>
     <CargandoContainer>
       Cargando
-      {' '}
+      &nbsp;
       <span>{`${completed}%`}</span>
     </CargandoContainer>
     <ProgressBarContainer color={ color } completed={ completed }>

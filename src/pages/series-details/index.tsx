@@ -131,18 +131,10 @@ const SeriesDetailPage = () => {
         <h2>Temporada 1</h2>
         <Splide
           options={ {
-            perPage: 6,
             drag: 'free',
             rewind: true,
             width: '100%',
-            breakpoints: {
-              1536: {
-                perPage: 5,
-              },
-              1280: {
-                perPage: 3,
-              },
-            },
+            autoWidth: true,
           } }
         >
           {episodes.map( ( ep: any ) => (

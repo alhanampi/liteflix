@@ -8,7 +8,7 @@ import { AiOutlinePaperClip } from 'react-icons/ai';
 import { IoMdClose } from 'react-icons/io';
 import { FileUploader } from 'react-drag-drop-files';
 import Button from '../button';
-import { AddModalContainer } from './styles';
+import { AddModalContainer, ButtonContainer } from './styles';
 import ProgressBar from '../progressBar';
 import { LiteFlixContext } from '@/context';
 
@@ -148,15 +148,16 @@ const AddMovieModal: FC = () => {
       <div>
         {fileName && <p>{fileName}</p>}
 
-        {progress !== 100 && (
+        <ButtonContainer>
+          {progress !== 100 && (
           <Button
             text="Subir película"
             variation={ false }
             onClick={ upload }
             disabled={ !!( title.trim() === '' || file === null ) }
           />
-        )}
-        {progress === 100 && (
+          )}
+          {progress === 100 && (
           <>
             <Button
               text="Subir otra"
@@ -171,7 +172,8 @@ const AddMovieModal: FC = () => {
               classN="smallBtn"
             />
           </>
-        )}
+          )}
+        </ButtonContainer>
       </div>
     </AddModalContainer>
   );

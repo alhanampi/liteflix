@@ -8,14 +8,6 @@ export const ThumbnailContainer = styled.div`
   transition: filter 0.5s ease;
   filter: drop-shadow(4px 3px 3px var(--hover-white));
 
-  .heart  {
-    position: absolute;
-    top: 0;
-    right: -1.5em;
-    color: var(--primary-white);
-    z-index: 20;
-  };
-
   img {
     display: block;
     height: 120px;
@@ -23,6 +15,10 @@ export const ThumbnailContainer = styled.div`
 
     &.big {
       height: 300px;
+    }
+
+    &.biggish {
+      height: 170px;
     }
 
     &.mid {
@@ -62,12 +58,21 @@ export const ThumbnailContainer = styled.div`
     }
 
     .play {
-      left: 20%;
+      left: 15%;
     }
 
     h3 {
+      top: 45%;
+      bottom: 0;
+      left: 35%;
+      z-index: 1;
+
+      
+    &.movie {
       top: 35%;
-      left: 40%;
+      bottom: 0;
+      left: 35%;
+}
     }
 
     .hover {
@@ -92,4 +97,42 @@ export const ThumbnailContainer = styled.div`
       }
     }
   }
-`;
+
+  
+  @media (max-width: 1536px) {
+      img.biggish {
+      height: 130px;
+    }
+
+    h3 {
+    font-size: 0.9em;
+    }
+  }
+
+  @media (max-width: 1366px) {
+  img.biggish {
+    height: 110px;
+    }
+
+  h3 {
+    font-size: 0.8em;
+  }
+}
+  
+  @media (max-width: 1280px) {
+  img.biggish {
+    height: 100px;
+  }
+  .hover {
+    display: none;
+  }
+  h3 {
+    font-size: 0.8em;
+  }
+
+  @media (max-width: 1024px) {
+      img.biggish {
+      height: 80px;
+    }
+  }
+}`;

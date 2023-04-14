@@ -20,6 +20,7 @@ const Button: FC<IButton> = ( {
     disabled={ disabled }
   >
     {icon}
+    &nbsp;
     {text}
   </ButtonContainer>
 );

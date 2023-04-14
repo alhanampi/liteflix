@@ -9,7 +9,29 @@ export const HeaderContainer = styled.div`
   padding: 0 4em;
   z-index: 20;
   width: 100%;
-  
+
+  .desktop {
+    display: flex;
+    width: 100%;
+  }
+
+  .mobile {
+    display: none;
+  }
+
+  @media (max-width: 1024px) {
+    .desktop {
+      display: none;
+    }
+    .mobile {
+      display: block;
+    }
+  }
+
+  @media (max-width: 768px) and (orientation: portrait) {
+    width: 80%;
+  }
+
   /* ajustar visual para mobile completamente */
   @media (max-width: 768px) and (orientation: portrait) {
     width: 80%;
@@ -18,9 +40,9 @@ export const HeaderContainer = styled.div`
   @media (max-width: 420px) and (orientation: portrait) {
     width: 60%;
   }
-  
+
   @media (max-width: 390px) and (orientation: portrait) {
-  width: 40%;
+    width: 40%;
   }
 `;
 
@@ -74,7 +96,6 @@ export const Right = styled.div`
     }
   }
 
-  
   .closeButton {
     margin: 0 4em 0 0;
     display: none;

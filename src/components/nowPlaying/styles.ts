@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const NowPlayingContainer = styled.div`
-position: relative;
+  position: relative;
 
   img {
     width: 100%;
@@ -94,6 +94,7 @@ position: relative;
 
 export const ButtonContainer = styled.div`
   position: absolute;
+  display: flex;
   top: 75%;
   left: 8%;
   width: 70%;

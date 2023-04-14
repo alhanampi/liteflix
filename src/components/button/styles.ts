@@ -2,6 +2,9 @@ import styled from 'styled-components';
 
 // eslint-disable-next-line import/prefer-default-export
 export const ButtonContainer = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
   border: 1px solid var(--primary-white);
   background-color: transparent;
@@ -12,7 +15,7 @@ export const ButtonContainer = styled.button`
   font-weight: 400;
   font-size: 1.2em;
   margin: 1em;
-
+  
   &.var {
     border: none;
     background-color: var(--primary-grey);

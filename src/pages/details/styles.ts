@@ -15,6 +15,7 @@ export const Right = styled.div`
   flex-direction: column;
   text-align: end;
   padding: 0 4em;
+  font-size: 1.2em;
 
   h2 {
     font-size: 5em;
@@ -24,6 +25,10 @@ export const Right = styled.div`
   p {
     letter-spacing: 0.1em;
     font-size: 1.2em;
+  }
+
+  @media (max-width: 1280px) {
+    font-size: 1em;
   }
 `;
 

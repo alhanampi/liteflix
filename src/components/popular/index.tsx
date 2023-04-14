@@ -37,7 +37,7 @@ const Popular: FC = () => {
       <PopularContainer>
         <h2 onClick={ () => setShowPopular( !showPopular ) }>
           <span>Ver:</span>
-          {' '}
+          &nbsp;
           populares
           {showPopular ? <BsChevronUp /> : <BsChevronDown />}
         </h2>
@@ -51,6 +51,8 @@ const Popular: FC = () => {
                 year={ p.release_date.slice( 0, 4 ) }
                 key={ p.original_title }
                 onClick={ () => navigate( p.id ) }
+                size="biggish"
+                movie
               />
             ) )}
           </div>

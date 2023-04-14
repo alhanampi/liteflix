@@ -21,4 +21,10 @@ export const PopularContainer = styled.div`
       margin-left: 0.5em;
     }
   }
+
+  @media (max-width: 1280px) {
+    h2{
+      font-size: 1.1em;
+    }
+  }
 `;

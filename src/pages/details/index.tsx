@@ -83,8 +83,7 @@ const MovieDetailPage = () => {
           <div>
             {movie.genres && (
               <p>
-                Géneros:
-                {' '}
+                Géneros:&nbsp;
                 {movie.genres.map( ( g: any, i: number ) => (
                   <span key={ g.name }>
                     {g.name}
@@ -95,18 +94,15 @@ const MovieDetailPage = () => {
             )}
             {movie.release_date && (
             <p>
-              Año:
-              {' '}
+              Año:&nbsp;
               {movie.release_date.slice( 0, 4 )}
             </p>
             )}
             {movie.runtime && (
             <p>
-              Duración:
-              {' '}
+              Duración:&nbsp;
               {movie.runtime}
-              {' '}
-              minutos
+              &nbsp; minutos
             </p>
             )}
           </div>
@@ -117,18 +113,10 @@ const MovieDetailPage = () => {
           <h2>Querés ver algo similar?</h2>
           <Splide
             options={ {
-              perPage: 6,
               drag: 'free',
               rewind: true,
               width: '100%',
-              breakpoints: {
-                1536: {
-                  perPage: 5,
-                },
-                1280: {
-                  perPage: 3,
-                },
-              },
+              autoWidth: true,
             } }
           >
             {similar.map( ( sim: any ) => (
@@ -144,6 +132,7 @@ const MovieDetailPage = () => {
                   year={ sim.release_date.slice( 0, 4 ) }
                   key={ sim.original_title }
                   size="mid"
+                  movie
                 />
               </SplideSlide>
             ) )}
