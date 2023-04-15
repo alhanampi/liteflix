@@ -4,31 +4,27 @@
 Challenge project for Litebox.
 
 
-
-
-
 ## Installation
 
 This is a nextJS project, so all you have to do is clone it and then,
 
 ```bash
-  npm i
-  npm run dev
+   npm i
+   npm run dev
 ```
 
 And done! you have it all set.
-    
+      
 ## Tech Stack
 
 NextJS, axios, eslint, styled components, typeScript and more!
-
 
 
 ## Features
 
 - Fully configured linter.
 - Services separated in an unified folder so they could be edited at any time.
-- Details screens for movies and series, complete with a fully functional navigation.
+- Detailed screens for movies and series, complete with a fully functional navigation.
 - Error handling for said screens.
 - A fully customized progress bar, with features such as: adding files, removing them, saving to localStorage.
 - Shared info saved to context.
@@ -40,18 +36,19 @@ NextJS, axios, eslint, styled components, typeScript and more!
 
 I tried to test it in the most common screen sizes, so it should work on:
 
-| width | height |
-|-------|--------|
-| 1920  | 1080   |
-| 1536  |  864   |
-| 1366  |  768   |
-| 1280  |  720   |
-| 1024  |  600   |
-|  412  |  915   |
-|  393  |  873   |
-|  360  |  800   |
-|  360  |  780   |
-|  360  |  640   |
+|   width   |  height   |
+|-----------|-----------|
+|   1920    |   1080    |
+|   1536    |    864    |
+|   1366    |    768    |
+|   1280    |    720    |
+|   1024    |    600    |
+|    600    |    800    |
+|    412    |    915    |
+|    393    |    873    |
+|    360    |    800    |
+|    360    |    780    |
+|    360    |    640    |
 
 
 ## What's to come?

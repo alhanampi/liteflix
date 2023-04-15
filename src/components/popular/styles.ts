@@ -12,6 +12,7 @@ export const PopularContainer = styled.div`
     text-align: right;
     letter-spacing: 3px;
     cursor: pointer;
+    text-shadow: 2px 2px 4px var(--hover-grey);
 
     span {
       font-weight: 300;
@@ -23,8 +24,23 @@ export const PopularContainer = styled.div`
   }
 
   @media (max-width: 1280px) {
-    h2{
+    h2 {
       font-size: 1.1em;
+    }
+  }
+
+  @media (max-width: 600px) and (orientation: portrait) {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    height: auto;
+    margin-top: -2em;
+    margin-left:30%;
+
+    h2 {
+      font-size: 1.2em;
+      padding-bottom: 1em;
     }
   }
 `;

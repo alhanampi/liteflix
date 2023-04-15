@@ -15,6 +15,7 @@ export const ButtonContainer = styled.button`
   font-weight: 400;
   font-size: 1.2em;
   margin: 1em;
+  text-shadow: 3px 3px 2px var(--hover-grey);
   
   &.var {
     border: none;

@@ -1,5 +1,10 @@
-/* eslint-disable import/prefer-default-export */
 import styled from 'styled-components';
+
+export const MyMoviesMain = styled.div`
+ @media (max-width: 600px) and (orientation: portrait) {
+    margin-top: 12em;
+ }
+`;
 
 export const MyMoviesContainer = styled.div`
   display: flex;

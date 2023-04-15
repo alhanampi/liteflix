@@ -1,5 +1,5 @@
 import { Splide, SplideSlide } from '@splidejs/react-splide';
-import { MyMoviesContainer, Title } from './styles';
+import { MyMoviesContainer, Title, MyMoviesMain } from './styles';
 import Thumbnail from '../thumbnail';
 import '@splidejs/react-splide/css';
 
@@ -15,16 +15,16 @@ export const MyMovies = () => {
   }
 
   return (
-    <>
+    <MyMoviesMain>
       <Title id="misPeliculas">Mis películas</Title>
       <MyMoviesContainer>
         {movies.length > 5 ? (
           <Splide
             options={ {
               drag: 'free',
-              gap: '1em',
               rewind: true,
               width: '100%',
+              gap: '2em',
               autoWidth: true,
             } }
           >
@@ -50,7 +50,7 @@ export const MyMovies = () => {
           ) )
         )}
       </MyMoviesContainer>
-    </>
+    </MyMoviesMain>
   );
 };
 

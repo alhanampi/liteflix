@@ -39,8 +39,8 @@ const CarouselSeries:FC = () => {
             drag: 'free',
             rewind: true,
             width: '100%',
-            autoWidth: true,
             gap: '2em',
+            autoWidth: true,
           } }
         >
           {series.map( ( serie: any ) => (

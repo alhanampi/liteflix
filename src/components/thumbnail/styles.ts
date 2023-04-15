@@ -36,6 +36,7 @@ export const ThumbnailContainer = styled.div`
     color: white;
     font-weight: 400;
     letter-spacing: 2px;
+    text-shadow: 2px 2px 4px var(--hover-grey);
   }
 
   .play {
@@ -67,12 +68,11 @@ export const ThumbnailContainer = styled.div`
       left: 35%;
       z-index: 1;
 
-      
-    &.movie {
-      top: 35%;
-      bottom: 0;
-      left: 35%;
-}
+      &.movie {
+        top: 35%;
+        bottom: 0;
+        left: 35%;
+      }
     }
 
     .hover {
@@ -98,41 +98,101 @@ export const ThumbnailContainer = styled.div`
     }
   }
 
-  
   @media (max-width: 1536px) {
-      img.biggish {
+    img.biggish {
       height: 130px;
     }
 
     h3 {
-    font-size: 0.9em;
+      font-size: 0.9em;
     }
   }
 
   @media (max-width: 1366px) {
-  img.biggish {
-    height: 110px;
+    img.biggish {
+      height: 110px;
     }
 
-  h3 {
-    font-size: 0.8em;
+    h3 {
+      font-size: 0.8em;
+    }
   }
-}
-  
+
   @media (max-width: 1280px) {
-  img.biggish {
-    height: 100px;
-  }
-  .hover {
-    display: none;
-  }
-  h3 {
-    font-size: 0.8em;
+    img.biggish {
+      height: 100px;
+    }
+    .hover {
+      display: none;
+    }
+    h3 {
+      font-size: 0.8em;
+    }
   }
 
   @media (max-width: 1024px) {
-      img.biggish {
+    img.biggish {
       height: 80px;
     }
   }
-}`;
+
+  @media (max-width: 600px) and (orientation: portrait) {
+    width: 150px;
+
+    img.biggish {
+      height: 150px;
+    }
+    
+    .play {
+      left: 62%;
+    }
+
+   .box.biggish .play {
+      left: 90%;
+    }
+        
+   .box.mid .play {
+      left: 70%;
+    }
+
+  &:hover {
+    .box.big h3 {
+      left: 63%;
+      font-size: 1.2em;
+      width: 100%;
+      top: 40%;
+    }
+     .big .play {
+      left: 28%;
+    }
+    .big .scoreContainer {
+      width: 125%;
+    }   
+
+   .box.biggish h3 {
+      left: 68%;
+      font-size: 1.2em;
+      width: 134%;
+    }
+
+    .biggish .play {
+      left: 28%;
+    }
+    .biggish .scoreContainer {
+      width: 150%;
+      
+    }
+   .box.mid h3 {
+      left: 63%;
+      font-size: 1.2em;
+      width: 100%;
+    }
+     .mid .play {
+      left: 28%;
+    }
+    .mid .scoreContainer {
+      width: 128%;
+    }   
+  }
+  }
+`;

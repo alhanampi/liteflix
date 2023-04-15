@@ -39,6 +39,7 @@ const CarouselPopular:FC = () => {
             drag: 'free',
             rewind: true,
             width: '100%',
+            gap: '2em',
             autoWidth: true,
           } }
         >

@@ -76,7 +76,31 @@ const Header: FC<IHeader> = ( { mainPage } ) => {
         {showOptionsModal && <Dropdown />}
       </div>
       <div className="mobile">
-        este es el header mobile
+        <Right>
+          {mainPage ? (
+            <div className="options">
+              <HiMenuAlt3 size={ 35 } onClick={ showCloseButton } />
+              {showOptionsModal && (
+              <IoMdClose
+                size={ 35 }
+                onClick={ () => setShowOptionsModal( !showOptionsModal ) }
+                className="closeButton show"
+              />
+              )}
+            </div>
+          )
+            : (
+              <ReturnText onClick={ () => router.back() }>Volver al home!</ReturnText>
+            )}
+          <Link href="/">
+            <Logo>
+              Lite
+              <span> flix </span>
+            </Logo>
+          </Link>
+          <img src="/images/user.jpg" alt="avatar" />
+          {showOptionsModal && <Dropdown />}
+        </Right>
       </div>
     </HeaderContainer>
   );

@@ -16,6 +16,7 @@ export const NowPlayingContainer = styled.div`
     position: absolute;
     top: 50%;
     left: 10%;
+    text-shadow: 1px 1px 3px var(--hover-grey);
   }
 
   p {
@@ -26,13 +27,21 @@ export const NowPlayingContainer = styled.div`
     top: 50%;
     left: 10%;
     letter-spacing: 5px;
+    text-shadow: 2px 2px 3px var(--hover-grey);
 
     span {
       font-weight: 700;
     }
   }
+  
+  @media (max-width: 1024px) {
+    h2 {
+      font-size: 4em;
+    }
+  }
+  
 
-  @media (max-width: 768px) and (orientation: portrait) {
+  @media (max-width: 600px) and (orientation: portrait) {
     img {
       width: 100%;
       height: 150vw;
@@ -40,13 +49,13 @@ export const NowPlayingContainer = styled.div`
     }
 
     h2 {
-      font-size: 9em;
+      font-size: 4em;
       top: 50%;
     }
 
     p {
-      font-size: 2em;
-      top: 55%;
+      font-size: 1.5em;
+      top: 45%;
     }
   }
 
@@ -107,6 +116,11 @@ export const ButtonContainer = styled.div`
   @media (max-width: 1024px) {
     top: 80%;
     width: 50%;
+
+    
+  @media (max-width: 600px) and (orientation: portrait) {
+    width: 80%;
+  }
   }
 
   @media (max-width: 420px) and (orientation: portrait) {

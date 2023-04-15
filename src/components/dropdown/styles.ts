@@ -56,8 +56,10 @@ export const DropdownContainer = styled.div`
   }
 
   @media (max-width: 1024px) {
-    width: 30%;
-    height: 58vh;
+    width: 40%;
+    height: 100vh;
+    top: 5em;
+    left: 0em;
     li{
       font-size: 1em;
     }

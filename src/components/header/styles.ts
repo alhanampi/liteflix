@@ -6,7 +6,7 @@ export const HeaderContainer = styled.div`
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-between;
-  padding: 0 4em;
+  padding: 1em 4em;
   z-index: 20;
   width: 100%;
 
@@ -24,18 +24,23 @@ export const HeaderContainer = styled.div`
       display: none;
     }
     .mobile {
-      display: block;
+      display: flex;
+      width: 100%;
+      justify-content: space-evenly;
+    }
+
+    .closeButton {
+      position: absolute;
+      left: 26em;
+      top: 5em;
+      z-index: 300;
     }
   }
 
-  @media (max-width: 768px) and (orientation: portrait) {
-    width: 80%;
+  @media (max-width: 600px) and (orientation: portrait) {
+    width: 100%;
   }
 
-  /* ajustar visual para mobile completamente */
-  @media (max-width: 768px) and (orientation: portrait) {
-    width: 80%;
-  }
 
   @media (max-width: 420px) and (orientation: portrait) {
     width: 60%;
@@ -114,6 +119,10 @@ export const Right = styled.div`
       transition: 0.3s ease;
       background-color: var(--hover-white);
     }
+  }
+
+  @media (max-width: 1024px) {
+    width: 100%;
   }
 `;
 

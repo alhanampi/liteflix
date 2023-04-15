@@ -25,26 +25,28 @@ const Thumbnail: FC<IThumbnail> = ( {
   movie,
 } ) => (
   <ThumbnailContainer onClick={ onClick }>
-    <span>
-      <img src={ image } alt="thumbnail" className={ size && size } />
-    </span>
-    <h3 className={ movie ? 'movie' : 'series' }>{text}</h3>
-    <BsPlayCircle className="play" />
+    <div className={ `box ${size && size}` }>
+      <span className={ `${size && size}Span` }>
+        <img src={ image } alt="thumbnail" className={ size && size } />
+      </span>
+      <BsPlayCircle className="play" />
+      <h3 className={ movie ? 'movie' : 'series' }>{text}</h3>
 
-    {score && year ? (
-      <div className="hover">
-        <div className="scoreContainer">
-          <span>
-            <AiFillStar className="star" />
+      {score && year ? (
+        <div className="hover">
+          <div className="scoreContainer">
+            <span>
+              <AiFillStar className="star" />
             &nbsp;
-            <p>{score}</p>
-          </span>
-          <p>{year}</p>
+              <p>{score}</p>
+            </span>
+            <p>{year}</p>
+          </div>
         </div>
-      </div>
-    ) : (
-      <></>
-    )}
+      ) : (
+        <></>
+      )}
+    </div>
   </ThumbnailContainer>
 );
 
