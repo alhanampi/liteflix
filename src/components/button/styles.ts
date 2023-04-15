@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 
-// eslint-disable-next-line import/prefer-default-export
 export const ButtonContainer = styled.button`
   display: flex;
   justify-content: center;
@@ -15,7 +14,7 @@ export const ButtonContainer = styled.button`
   font-weight: 400;
   font-size: 1.2em;
   margin: 1em;
-  text-shadow: 3px 3px 2px var(--hover-grey);
+  text-shadow: 2px 2px 1px var(--hover-grey);
   
   &.var {
     border: none;
@@ -31,7 +30,7 @@ export const ButtonContainer = styled.button`
   :disabled {
     cursor: default;
     background-color: var(--hover-white-intense);
-    color: var(--primary-grey);
+    color: var(--primary-white);
     border: none;
   }
 

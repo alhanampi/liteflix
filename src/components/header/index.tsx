@@ -46,28 +46,34 @@ const Header: FC<IHeader> = ( { mainPage } ) => {
             </Logo>
           </Link>
           {mainPage && (
-          <p onClick={ addMovie }>
-            <VscAdd />
-            Agregar película
-          </p>
+            <p onClick={ addMovie }>
+              <VscAdd />
+              Agregar película
+            </p>
           )}
         </Left>
 
         <Right>
           {showOptionsModal && (
-          <IoMdClose
-            size={ 35 }
-            onClick={ () => setShowOptionsModal( !showOptionsModal ) }
-            className="closeButton show"
-          />
+            <IoMdClose
+              size={ 35 }
+              onClick={ () => setShowOptionsModal( !showOptionsModal ) }
+              className="closeButton show"
+            />
           )}
           {mainPage ? (
             <>
-              <HiMenuAlt3 size={ 35 } onClick={ showCloseButton } />
-              <BsBell size={ 35 } />
+              <HiMenuAlt3
+                size={ 35 }
+                onClick={ showCloseButton }
+                className={ `"iconHeader" ${showOptionsModal && 'hide'}` }
+              />
+              <BsBell size={ 35 } className="iconHeader" />
             </>
           ) : (
-            <ReturnText onClick={ () => router.back() }>Volver al home!</ReturnText>
+            <ReturnText onClick={ () => router.back() }>
+              Volver al home!
+            </ReturnText>
           )}
 
           <img src="/images/user.jpg" alt="avatar" />
@@ -79,19 +85,24 @@ const Header: FC<IHeader> = ( { mainPage } ) => {
         <Right>
           {mainPage ? (
             <div className="options">
-              <HiMenuAlt3 size={ 35 } onClick={ showCloseButton } />
-              {showOptionsModal && (
-              <IoMdClose
+              <HiMenuAlt3
                 size={ 35 }
-                onClick={ () => setShowOptionsModal( !showOptionsModal ) }
-                className="closeButton show"
+                onClick={ showCloseButton }
+                className={ showOptionsModal ? 'dropButton' : '' }
               />
+              {showOptionsModal && (
+                <IoMdClose
+                  size={ 35 }
+                  onClick={ () => setShowOptionsModal( !showOptionsModal ) }
+                  className="closeButton show"
+                />
               )}
             </div>
-          )
-            : (
-              <ReturnText onClick={ () => router.back() }>Volver al home!</ReturnText>
-            )}
+          ) : (
+            <ReturnText onClick={ () => router.back() }>
+              Volver
+            </ReturnText>
+          )}
           <Link href="/">
             <Logo>
               Lite

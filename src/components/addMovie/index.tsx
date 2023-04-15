@@ -116,10 +116,11 @@ const AddMovieModal: FC = () => {
               types={ fileTypes }
               maxSize={ 2 }
               children={ (
-                <>
+                <div className="uploaderContainer">
                   <AiOutlinePaperClip className="clip" />
-                  <span>Agregá un archivo o arrastralo y soltalo aquí</span>
-                </>
+                  <span className="longText">Agregá un archivo o arrastralo y soltalo aquí</span>
+                  <span className="shortText">Agregá un archivo</span>
+                </div>
               ) }
             />
           </button>
@@ -150,12 +151,20 @@ const AddMovieModal: FC = () => {
 
         <ButtonContainer>
           {progress !== 100 && (
-          <Button
-            text="Subir película"
-            variation={ false }
-            onClick={ upload }
-            disabled={ !!( title.trim() === '' || file === null ) }
-          />
+            <>
+              <Button
+                text="Subir película"
+                variation={ false }
+                onClick={ upload }
+                disabled={ !!( title.trim() === '' || file === null ) }
+              />
+              <Button
+                text="Salir"
+                classN="closeButton"
+                onClick={ handleModal }
+                variation
+              />
+            </>
           )}
           {progress === 100 && (
           <>

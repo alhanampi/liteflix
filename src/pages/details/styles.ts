@@ -13,6 +13,27 @@ export const DetailContainer = styled.div`
 
 export const Left = styled.div`
   padding: 0 4em;
+
+  @media (max-width: 600px) and (orientation: portrait) {
+    align-items: center;
+    margin: 0;
+    justify-content: center;
+    text-align: center;
+    padding: 0;
+  }
+
+  @media (max-width: 420px) and (orientation: portrait) {
+    font-size: 0.8em;
+    align-items: center;
+    margin: 0;
+    justify-content: center;
+    text-align: center;
+    padding: 0;
+
+    h2 {
+      font-size: 3em;
+    }
+  } 
 `;
 
 export const Right = styled.div`
@@ -43,6 +64,19 @@ export const Right = styled.div`
       font-size: 4em;
     }
   } 
+
+  @media (max-width: 420px) and (orientation: portrait) {
+    font-size: 0.8em;
+    align-items: center;
+    margin: 0;
+    justify-content: center;
+    text-align: center;
+    padding: 0;
+
+    h2 {
+      font-size: 3em;
+    }
+  } 
 `;
 
 export const Similar = styled.div`
@@ -51,4 +85,12 @@ export const Similar = styled.div`
     font-size: 2em;
     color: var(--primary-aqua);
   }
+
+  @media (max-width: 420px) and (orientation: portrait) {
+    padding: 0;
+    h2 {
+      padding: 0 1em;
+    }
+
+  } 
 `;

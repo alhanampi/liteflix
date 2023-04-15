@@ -50,6 +50,11 @@ export const AddModalContainer = styled.div`
     :hover {
       background: var(--hover-white);
     }
+    .uploaderContainer {
+      .shortText {
+        display: none;
+      }
+    }
   }
 
   input {
@@ -80,9 +85,62 @@ export const AddModalContainer = styled.div`
       margin-top: 5em;
     }
   }
+
+  @media (max-width: 600px) and (orientation: portrait) {
+    height: 100vh;
+    width: 100%;
+
+    h2 {
+      margin-top: 10em;
+    }
+    .close {
+      display: none;
+    }
+
+    .btn {
+      height: 8em;
+
+      .uploaderContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .longText {
+          display: none;
+        }
+        .shortText {
+          display: inline-block;
+          font-size: 1.5em;
+        }
+        .clip {
+          width: 5%;
+          padding-right: 0.5em;
+          transform: scaleY(-1);
+        }
+      }
+    }
+  }
 `;
 
 export const ButtonContainer = styled.div`
   display: flex;
   justify-content: center;
+
+  .closeButton {
+    display: none;
+  }
+
+  @media (max-width: 600px) and (orientation: portrait) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    button {
+      width: 80%;
+    }
+
+    .closeButton {
+      display: block;
+    }
+  }
 `;

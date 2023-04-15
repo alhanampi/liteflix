@@ -16,40 +16,44 @@ export const MyMovies = () => {
 
   return (
     <MyMoviesMain>
-      <Title id="misPeliculas">Mis películas</Title>
-      <MyMoviesContainer>
-        {movies.length > 5 ? (
-          <Splide
-            options={ {
-              drag: 'free',
-              rewind: true,
-              width: '100%',
-              gap: '2em',
-              autoWidth: true,
-            } }
-          >
-            {movies.map( ( movie: any ) => (
-              <SplideSlide key={ movie.title }>
+      { movies.length > 0 && (
+        <>
+          <Title id="misPeliculas">Mis películas</Title>
+          <MyMoviesContainer>
+            {movies.length > 5 ? (
+              <Splide
+                options={ {
+                  drag: 'free',
+                  rewind: true,
+                  width: '100%',
+                  gap: '2em',
+                  autoWidth: true,
+                } }
+              >
+                {movies.map( ( movie: any ) => (
+                  <SplideSlide key={ movie.title }>
+                    <Thumbnail
+                      key={ movie.title }
+                      text={ movie.title }
+                      image={ movie.file }
+                      movie
+                    />
+                  </SplideSlide>
+                ) )}
+              </Splide>
+            ) : (
+              movies.map( ( movie: any ) => (
                 <Thumbnail
                   key={ movie.title }
                   text={ movie.title }
                   image={ movie.file }
                   movie
                 />
-              </SplideSlide>
-            ) )}
-          </Splide>
-        ) : (
-          movies.map( ( movie: any ) => (
-            <Thumbnail
-              key={ movie.title }
-              text={ movie.title }
-              image={ movie.file }
-              movie
-            />
-          ) )
-        )}
-      </MyMoviesContainer>
+              ) )
+            )}
+          </MyMoviesContainer>
+        </>
+      )}
     </MyMoviesMain>
   );
 };

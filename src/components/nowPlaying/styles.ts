@@ -9,6 +9,17 @@ export const NowPlayingContainer = styled.div`
     object-fit: cover;
   }
 
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0) 50%, var(--primary-grey) 80% );
+    z-index: 1;
+  }
+
   h2 {
     font-size: 6em;
     color: var(--primary-aqua);
@@ -17,6 +28,7 @@ export const NowPlayingContainer = styled.div`
     top: 50%;
     left: 10%;
     text-shadow: 1px 1px 3px var(--hover-grey);
+    z-index: 2;
   }
 
   p {
@@ -39,7 +51,6 @@ export const NowPlayingContainer = styled.div`
       font-size: 4em;
     }
   }
-  
 
   @media (max-width: 600px) and (orientation: portrait) {
     img {
@@ -67,13 +78,13 @@ export const NowPlayingContainer = styled.div`
     }
 
     h2 {
-      font-size: 6em;
-      top: 60%;
+      font-size: 2.5em;
+      top: 55%;
     }
 
     p {
       font-size: 1.5em;
-      top: 60%;
+      top: 50%;
     }
   }
 
@@ -107,6 +118,7 @@ export const ButtonContainer = styled.div`
   top: 75%;
   left: 8%;
   width: 70%;
+  z-index: 10;
 
   @media (max-width: 1566px) {
     top: 80%;
@@ -124,7 +136,11 @@ export const ButtonContainer = styled.div`
   }
 
   @media (max-width: 420px) and (orientation: portrait) {
-    top: 82%;
+    top: 85%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
   }
 
   @media (max-width: 390px) and (orientation: portrait) {

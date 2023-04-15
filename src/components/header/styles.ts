@@ -19,6 +19,20 @@ export const HeaderContainer = styled.div`
     display: none;
   }
 
+  img,
+  .closeButton,
+  .iconHeader {
+    z-index: 300;
+  }
+
+  .options + a {
+    z-index: 300;
+  }
+
+  .hide {
+    display: none;
+  }
+
   @media (max-width: 1024px) {
     .desktop {
       display: none;
@@ -31,19 +45,30 @@ export const HeaderContainer = styled.div`
 
     .closeButton {
       position: absolute;
-      left: 26em;
-      top: 5em;
+      left: 4em;
+      top: 1em;
       z-index: 300;
     }
   }
 
   @media (max-width: 600px) and (orientation: portrait) {
     width: 100%;
+
+    .dropButton {
+      display: none;
+    }
+
+    .closeButton {
+      left: 4em;
+      top: 1em;
+    }
   }
 
-
   @media (max-width: 420px) and (orientation: portrait) {
-    width: 60%;
+    .mobile{
+      width: 100%;
+      justify-content: space-between;
+    }
   }
 
   @media (max-width: 390px) and (orientation: portrait) {
@@ -87,9 +112,10 @@ export const Left = styled.div`
 export const Right = styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-wrap: nowrap;
-  gap: 2em;
+  gap: 5em;
+  margin-right: 11em;
 
   img {
     width: 2.5em;
@@ -102,7 +128,6 @@ export const Right = styled.div`
   }
 
   .closeButton {
-    margin: 0 4em 0 0;
     display: none;
   }
 
@@ -121,8 +146,32 @@ export const Right = styled.div`
     }
   }
 
+  @media (max-width: 1536px) {
+    margin-right: 7em!important; //I hate importants, but this was the only way
+  }
+
+  @media (max-width: 1366px) {
+    margin-right: 5em!important; //I hate importants, but this was the only way
+  }
+
+  @media (max-width: 1280px) {
+    margin-right: 3em!important; //I hate importants, but this was the only way
+  }
+
   @media (max-width: 1024px) {
     width: 100%;
+
+    img {
+      z-index: 300;
+    }
+  }
+
+  .options + a {
+    z-index: 300;
+  }
+
+  @media (max-width: 420px) and (orientation: portrait) {
+    margin-right: -1em!important; //I hate importants, but this was the only way
   }
 `;
 

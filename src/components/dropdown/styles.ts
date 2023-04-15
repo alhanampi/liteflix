@@ -1,14 +1,13 @@
-/* eslint-disable import/prefer-default-export */
 import styled from 'styled-components';
 
 export const DropdownContainer = styled.div`
   position: absolute;
-  top: 5em;
+  top: 0em;
   right: 0em;
   background-color: var(--primary-grey-transparent);
-  height: 60vh;
-  width: 25%;
-  z-index: 15;
+  height: 70vh;
+  width: 30%;
+  z-index: 35;
   padding: 2% 4%;
 
   .closeButton {
@@ -24,6 +23,7 @@ export const DropdownContainer = styled.div`
 
   ul {
     padding: 0;
+    margin-top: 5em;
   }
 
   li {
@@ -33,37 +33,69 @@ export const DropdownContainer = styled.div`
     list-style-type: none;
     padding: 3% 0;
     cursor: pointer;
+
+    svg {
+      color: var(--primary-white);
+      width: 1em;
+    }
+
     :hover {
       background-color: var(--hover-white);
       transition: 0.2s ease;
     }
   }
+
   .add {
-    margin: 9% 0;
+    margin: 5% 0;
     font-weight: 400;
+    display: flex;
+    align-items: center;
   }
 
   @media (max-width: 1536px) {
-    height: 60vh;
+    height: 70vh;
   }
 
   @media (max-width: 1366px) {
-    
+    height: 80vh;
   }
 
   @media (max-width: 1280px) {
-    height: 55vh;
+    height: 85vh;
   }
 
   @media (max-width: 1024px) {
-    width: 40%;
+    width: 50%;
     height: 100vh;
-    top: 5em;
+    top: 0em;
     left: 0em;
-    li{
-      font-size: 1em;
+    background-color: var(--primary-grey);
+
+    ul {
+      margin-top: 5em;
+    }
+
+    li {
+      .add {
+        svg {
+          color: var(--primary-white);
+          width: 2em;
+        }
+      }
     }
   }
 
-//hacer un drop diferente de 1024 para abajo
+  @media (max-width: 600px) and (orientation: portrait) {
+    width: 100%;
+    height: 90vh;
+    background-color: var(--primary-grey);
+
+    li {
+      font-size: 1.5em;
+      svg {
+        color: var(--primary-white);
+        width: 2em;
+      }
+    }
+  }
 `;

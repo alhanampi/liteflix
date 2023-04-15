@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const MyMoviesMain = styled.div`
  @media (max-width: 600px) and (orientation: portrait) {
     margin-top: 12em;
+    
  }
 `;
 
@@ -17,4 +18,8 @@ export const MyMoviesContainer = styled.div`
 
 export const Title = styled.h2`
   padding-left: 2em;
+
+  @media (max-width: 600px) and (orientation: portrait) {
+    padding-top: 2em;
+  }
 `;

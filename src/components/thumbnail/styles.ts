@@ -1,4 +1,3 @@
-/* eslint-disable import/prefer-default-export */
 import styled from 'styled-components';
 
 export const ThumbnailContainer = styled.div`
@@ -194,5 +193,4 @@ export const ThumbnailContainer = styled.div`
       width: 128%;
     }   
   }
-  }
-`;
+}`;

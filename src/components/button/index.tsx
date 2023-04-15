@@ -16,7 +16,7 @@ const Button: FC<IButton> = ( {
 } ) => (
   <ButtonContainer
     onClick={ onClick }
-    className={ variation ? 'var' : `${classN}` }
+    className={ variation ? `var ${classN}` : `${classN}` }
     disabled={ disabled }
   >
     {icon}

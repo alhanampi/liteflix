@@ -57,7 +57,6 @@ const Dropdown: FC = () => {
           populares
 
         </li>
-        {/* cambiar a a o button */}
         <li
           onClick={ () => handleSectionClick( 'misPeliculas' ) }
           onKeyDown={ ( event ) => {
@@ -70,8 +69,9 @@ const Dropdown: FC = () => {
         </li>
         <li>mi lista</li>
         <li className="add" onClick={ addMovie }>
-          <VscAdd size={ 16 } />
-          Agregar película
+          <VscAdd className="icon" />
+          &nbsp;
+          <span>Agregar película</span>
         </li>
         <li>Cerrar sesión</li>
       </ul>

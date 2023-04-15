@@ -19,13 +19,14 @@
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx", ".tsx"] }],
     "import/extensions": "off",
     "import/no-unresolved": "off",
-    "react/function-component-definition": "off", // disable the 'Function component is not a function declaration' rule
-    "react/react-in-jsx-scope": "off", // disable the 'React must be in scope when using JSX' rule
-    "import/no-extraneous-dependencies": "off"
+    "react/function-component-definition": "off", 
+    "react/react-in-jsx-scope": "off", 
+    "import/no-extraneous-dependencies": "off",
+    "import/prefer-default-export": "off"
   },
   "settings": {
     "react": {
-      "version": "detect" // Automatically detect the version of React to use
+      "version": "detect" 
     }
   }
 }

@@ -1,4 +1,3 @@
-/* eslint-disable import/prefer-default-export */
 import styled from 'styled-components';
 
 export const FooterContainer = styled.div`
@@ -21,6 +20,12 @@ export const Left = styled.div`
     color: var(--primary-aqua);
     font-weight: 700;
     font-size: 1.6em;
+  }
+
+  @media (max-width: 420px) and (orientation: portrait) {
+    text-align: center;
+    align-items: center;
+    justify-content: space-around;
   }
 `;
 
@@ -46,5 +51,11 @@ export const Right = styled.div`
 
   @media (max-width: 600px) and (orientation: portrait) {
     width: 100%;
+  }
+
+  @media (max-width: 420px) and (orientation: portrait) {
+    svg {
+      margin: 0
+    }
   }
 `;

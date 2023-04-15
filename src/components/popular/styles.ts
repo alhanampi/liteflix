@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 
-// eslint-disable-next-line import/prefer-default-export
 export const PopularContainer = styled.div`
   position: absolute;
   top: 8em;
   height: 70vh;
   right: 4em;
+  z-index: 20;
 
   h2 {
     font-weight: 400;
@@ -42,5 +42,9 @@ export const PopularContainer = styled.div`
       font-size: 1.2em;
       padding-bottom: 1em;
     }
+  }
+
+  @media (max-width: 420px) and (orientation: portrait) {
+        margin-left:24%;
   }
 `;
