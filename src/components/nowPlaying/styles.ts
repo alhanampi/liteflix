@@ -1,4 +1,7 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+import { bounceIn } from 'react-animations';
+
+const bounceInAnimation = keyframes`${bounceIn}`;
 
 export const NowPlayingContainer = styled.div`
   position: relative;
@@ -29,6 +32,7 @@ export const NowPlayingContainer = styled.div`
     left: 10%;
     text-shadow: 1px 1px 3px var(--hover-grey);
     z-index: 2;
+    animation: 1s ${bounceInAnimation};
   }
 
   p {

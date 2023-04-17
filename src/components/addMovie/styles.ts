@@ -1,4 +1,7 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+import { fadeIn } from 'react-animations';
+
+const fadeInAnimation = keyframes`${fadeIn}`;
 
 export const AddModalContainer = styled.div`
   position: absolute;
@@ -11,7 +14,8 @@ export const AddModalContainer = styled.div`
   z-index: 15;
   padding: 2% 4%;
   text-align: center;
-
+  animation: 1s ${fadeInAnimation};
+  
   .close {
     position: absolute;
     right: 2.5em;

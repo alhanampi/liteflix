@@ -1,15 +1,7 @@
 /* eslint-disable react/require-default-props */
 import { FC } from 'react';
 import { ButtonContainer } from './styles';
-
-export interface IButton {
-  text: string;
-  icon?: JSX.Element;
-  onClick?: any;
-  variation: boolean;
-  disabled?: boolean;
-  classN?: string;
-}
+import { IButton } from '@/interfaces';
 
 const Button: FC<IButton> = ( {
   icon, text, onClick, variation, disabled, classN,

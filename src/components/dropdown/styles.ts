@@ -1,4 +1,7 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+import { fadeInDown } from 'react-animations';
+
+const fadeInDownAnimation = keyframes`${fadeInDown}`;
 
 export const DropdownContainer = styled.div`
   position: absolute;
@@ -9,7 +12,8 @@ export const DropdownContainer = styled.div`
   width: 30%;
   z-index: 35;
   padding: 2% 4%;
-
+  animation: .5s ${fadeInDownAnimation};
+  
   .closeButton {
     margin-top: 3%;
     cursor: pointer;
@@ -65,7 +69,7 @@ export const DropdownContainer = styled.div`
   }
 
   @media (max-width: 1024px) {
-    width: 50%;
+    width: 40%;
     height: 100vh;
     top: 0em;
     left: 0em;

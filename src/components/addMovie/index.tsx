@@ -11,13 +11,9 @@ import Button from '../button';
 import { AddModalContainer, ButtonContainer } from './styles';
 import ProgressBar from '../progressBar';
 import { LiteFlixContext } from '@/context';
+import { IMovie } from '@/interfaces';
 
 const fileTypes = ['JPG', 'PNG', 'GIF'];
-
-interface Movie {
-  title: string;
-  file: File | null | any;
-}
 
 const AddMovieModal: FC = () => {
   const { handleModal } = useContext( LiteFlixContext );
@@ -27,7 +23,7 @@ const AddMovieModal: FC = () => {
   const [error, setError] = useState<boolean>( false );
   const [title, setTitle] = useState<string>( '' );
   const [fileName, setFileName] = useState<string>( '' );
-  const [movies, setMovies] = useState<Movie[]>( [] );
+  const [movies, setMovies] = useState<IMovie[]>( [] );
 
   const upload = () => {
     setshowAdd( false );

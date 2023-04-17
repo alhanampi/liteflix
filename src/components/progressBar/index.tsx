@@ -1,11 +1,6 @@
 import { FC } from 'react';
 import { Cancelar, CargandoContainer, ProgressBarContainer } from './styles';
-
-export interface IProgressBar {
-  completed: number;
-  color: string;
-  cancelUpload: any;
-}
+import { IProgressBar } from '@/interfaces';
 
 const ProgressBar: FC<IProgressBar> = ( { completed, color, cancelUpload } ) => (
   <>

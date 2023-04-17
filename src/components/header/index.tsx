@@ -6,17 +6,14 @@ import { useRouter } from 'next/router';
 import { VscAdd } from 'react-icons/vsc';
 import { HiMenuAlt3 } from 'react-icons/hi';
 import { BsBell } from 'react-icons/bs';
-import { IoMdClose } from 'react-icons/io';
+import { IoMdClose, IoMdHome } from 'react-icons/io';
 import Link from 'next/link';
 import {
   HeaderContainer, Left, Logo, Right, ReturnText,
 } from './styles';
 import Dropdown from '../dropdown';
 import { LiteFlixContext } from '@/context';
-
-export interface IHeader {
-  mainPage?: boolean;
-}
+import { IHeader } from '@/interfaces';
 
 const Header: FC<IHeader> = ( { mainPage } ) => {
   const router = useRouter();
@@ -30,7 +27,7 @@ const Header: FC<IHeader> = ( { mainPage } ) => {
     setShowOptionsModal( !showOptionsModal );
   };
 
-  const addMovie = ( e: any ) => {
+  const addMovie = ( e: { preventDefault: () => void; } ) => {
     e.preventDefault();
     handleModal();
   };
@@ -72,7 +69,7 @@ const Header: FC<IHeader> = ( { mainPage } ) => {
             </>
           ) : (
             <ReturnText onClick={ () => router.back() }>
-              Volver al home!
+              <IoMdHome />
             </ReturnText>
           )}
 
@@ -100,7 +97,7 @@ const Header: FC<IHeader> = ( { mainPage } ) => {
             </div>
           ) : (
             <ReturnText onClick={ () => router.back() }>
-              Volver
+              <IoMdHome />
             </ReturnText>
           )}
           <Link href="/">

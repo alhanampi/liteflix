@@ -4,16 +4,7 @@ import { FC } from 'react';
 import { BsPlayCircle } from 'react-icons/bs';
 import { AiFillStar } from 'react-icons/ai';
 import { ThumbnailContainer } from './styles';
-
-export interface IThumbnail {
-  image: string;
-  text: string;
-  score?: number;
-  year?: string;
-  size?: string;
-  onClick?: any;
-  movie?: boolean;
-}
+import { IThumbnail } from '@/interfaces';
 
 const Thumbnail: FC<IThumbnail> = ( {
   image,

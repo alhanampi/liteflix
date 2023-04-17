@@ -1,10 +1,19 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+import { slideInRight } from 'react-animations';
+
+const slideInRightAnimation = keyframes`${slideInRight}`;
 
 export const DetailContainer = styled.div`
   display: flex;
   align-items: center;
   padding-top: 5em;
   flex-direction: row;
+  margin: 0em 7em;
+  justify-content: space-between;
+
+  @media (max-width: 1280px){
+    margin: 0em 4em;
+  }
 
   @media (max-width: 600px) and (orientation: portrait) {
     flex-direction: column;
@@ -12,7 +21,7 @@ export const DetailContainer = styled.div`
 `;
 
 export const Left = styled.div`
-  padding: 0 4em;
+  padding: 3em 4em;
 
   @media (max-width: 600px) and (orientation: portrait) {
     align-items: center;
@@ -40,20 +49,21 @@ export const Right = styled.div`
   display: flex;
   flex-direction: column;
   text-align: end;
-  padding: 0 4em;
+  padding: 3em 4em;
   font-size: 1.2em;
 
   h2 {
     font-size: 5em;
     color: var(--primary-aqua);
+    animation: 1s ${slideInRightAnimation};
   }
 
   p {
     letter-spacing: 0.1em;
     font-size: 1.2em;
   }
-
-  @media (max-width: 1280px) {
+  
+    @media (max-width: 1280px) {
     font-size: 1em;
   }
 

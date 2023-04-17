@@ -1,11 +1,14 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+import { fadeInDown } from 'react-animations';
+
+const fadeInDownAnimation = keyframes`${fadeInDown}`;
 
 export const PopularContainer = styled.div`
   position: absolute;
   top: 8em;
   height: 70vh;
-  right: 4em;
-  z-index: 20;
+  right: 12em;
+  z-index: 10;
 
   h2 {
     font-weight: 400;
@@ -23,7 +26,17 @@ export const PopularContainer = styled.div`
     }
   }
 
+  .animate {
+    margin-right: -2em;
+    animation: .5s ${fadeInDownAnimation};
+  }
+
+  @media (max-width: 1366px){
+    right: 9em;
+  }
+
   @media (max-width: 1280px) {
+    right: 7.5em;
     h2 {
       font-size: 1.1em;
     }

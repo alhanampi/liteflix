@@ -42,7 +42,7 @@ const Popular: FC = () => {
           {showPopular ? <BsChevronUp /> : <BsChevronDown />}
         </h2>
         {showPopular && (
-          <div>
+          <div className="animate">
             {popular.map( ( p: any ) => (
               <Thumbnail
                 image={ `https://image.tmdb.org/t/p/w500${p.backdrop_path}` }

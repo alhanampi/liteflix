@@ -1,4 +1,7 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+import { rubberBand } from 'react-animations';
+
+const rubberBandAnimation = keyframes`${rubberBand}`;
 
 export const FooterContainer = styled.div`
   margin: 3em 8em;
@@ -33,7 +36,7 @@ export const Right = styled.div`
   display: flex;
   width: 20%;
   justify-content: space-between;
-  
+
   @media (max-width: 1024px) {
     width: 30%;
   }
@@ -46,6 +49,7 @@ export const Right = styled.div`
     :hover {
       color: var(--primary-aqua);
       margin: 1em;
+      animation: 0.5s ${rubberBandAnimation};
     }
   }
 
@@ -55,7 +59,7 @@ export const Right = styled.div`
 
   @media (max-width: 420px) and (orientation: portrait) {
     svg {
-      margin: 0
+      margin: 0;
     }
   }
 `;

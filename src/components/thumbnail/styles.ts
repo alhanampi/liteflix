@@ -1,8 +1,11 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+import { fadeInDown } from 'react-animations';
+
+const fadeInDownAnimation = keyframes`${fadeInDown}`;
 
 export const ThumbnailContainer = styled.div`
   cursor: pointer;
-  margin: 2em;
+  margin: 2em 2em;
   position: relative;
   transition: filter 0.5s ease;
   filter: drop-shadow(4px 3px 3px var(--hover-white));
@@ -17,7 +20,7 @@ export const ThumbnailContainer = styled.div`
     }
 
     &.biggish {
-      height: 170px;
+      height: 140px;
     }
 
     &.mid {
@@ -76,6 +79,7 @@ export const ThumbnailContainer = styled.div`
 
     .hover {
       display: block;
+      animation: 1s ${fadeInDownAnimation};
 
       .scoreContainer {
         position: absolute;
@@ -85,9 +89,11 @@ export const ThumbnailContainer = styled.div`
         align-items: center;
         width: 80%;
         justify-content: space-between;
+
         .star {
           fill: var(--primary-aqua);
         }
+
         span {
           display: flex;
           width: 50%;
@@ -109,7 +115,7 @@ export const ThumbnailContainer = styled.div`
 
   @media (max-width: 1366px) {
     img.biggish {
-      height: 110px;
+      height: 100px;
     }
 
     h3 {
@@ -119,7 +125,7 @@ export const ThumbnailContainer = styled.div`
 
   @media (max-width: 1280px) {
     img.biggish {
-      height: 100px;
+      height: 95px;
     }
     .hover {
       display: none;
@@ -131,7 +137,16 @@ export const ThumbnailContainer = styled.div`
 
   @media (max-width: 1024px) {
     img.biggish {
-      height: 80px;
+      height: 70px;
+    }
+    svg.play {
+      font-size: 2em;
+    }
+
+    &:hover {
+      .box.biggish h3 {
+        font-size: 0.7em;
+      }
     }
   }
 
@@ -141,56 +156,56 @@ export const ThumbnailContainer = styled.div`
     img.biggish {
       height: 150px;
     }
-    
+
     .play {
       left: 62%;
     }
 
-   .box.biggish .play {
+    .box.biggish .play {
       left: 90%;
     }
-        
-   .box.mid .play {
+
+    .box.mid .play {
       left: 70%;
     }
 
-  &:hover {
-    .box.big h3 {
-      left: 63%;
-      font-size: 1.2em;
-      width: 100%;
-      top: 40%;
-    }
-     .big .play {
-      left: 28%;
-    }
-    .big .scoreContainer {
-      width: 125%;
-    }   
+    &:hover {
+      .box.big h3 {
+        left: 63%;
+        font-size: 1.2em;
+        width: 100%;
+        top: 40%;
+      }
+      .big .play {
+        left: 28%;
+      }
+      .big .scoreContainer {
+        width: 125%;
+      }
 
-   .box.biggish h3 {
-      left: 68%;
-      font-size: 1.2em;
-      width: 134%;
-    }
+      .box.biggish h3 {
+        left: 68%;
+        font-size: 1.2em;
+        width: 134%;
+      }
 
-    .biggish .play {
-      left: 28%;
+      .biggish .play {
+        left: 28%;
+      }
+      .biggish .scoreContainer {
+        width: 150%;
+      }
+      .box.mid h3 {
+        left: 63%;
+        font-size: 1.2em;
+        width: 100%;
+      }
+      .mid .play {
+        left: 28%;
+      }
+      .mid .scoreContainer {
+        width: 128%;
+      }
     }
-    .biggish .scoreContainer {
-      width: 150%;
-      
-    }
-   .box.mid h3 {
-      left: 63%;
-      font-size: 1.2em;
-      width: 100%;
-    }
-     .mid .play {
-      left: 28%;
-    }
-    .mid .scoreContainer {
-      width: 128%;
-    }   
   }
-}`;
+`;

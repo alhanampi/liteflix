@@ -37,10 +37,12 @@ export const HeaderContainer = styled.div`
     .desktop {
       display: none;
     }
+    
     .mobile {
       display: flex;
       width: 100%;
       justify-content: space-evenly;
+      padding: 1em 0;
     }
 
     .closeButton {
@@ -90,6 +92,7 @@ export const Left = styled.div`
   width: 80%;
   align-items: center;
   gap: 2em;
+  margin-left: 7em;
 
   svg {
     margin: 0 0.3em;
@@ -115,7 +118,7 @@ export const Right = styled.div`
   justify-content: space-around;
   flex-wrap: nowrap;
   gap: 5em;
-  margin-right: 11em;
+  margin-right: 7em;
 
   img {
     width: 2.5em;
@@ -175,9 +178,10 @@ export const Right = styled.div`
   }
 `;
 
-export const ReturnText = styled.p`
-  font-size: 1.4em;
-  text-decoration: none;
-  text-align: right;
-  cursor: pointer;
+export const ReturnText = styled.div`
+  svg {
+    color:white;
+    width: 3em;
+    cursor: pointer;
+  }
 `;
