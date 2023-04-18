@@ -55,6 +55,17 @@ I tried to test it in the most common screen sizes, so it should work on:
 |    360    |    780    |
 |    360    |    640    |
 
+## App screenshots:
+
+1920 x 1080: 
+![mainScreen](public/images/screenshots/01-mainScreen.PNG)
+![popular](public/images/screenshots/02-popular.PNG)
+![addModal](public/images/screenshots/03-agregar.PNG)
+![dropdown](public/images/screenshots/04-dropdown.PNG)
+![sections](public/images/screenshots/05-sections.PNG)
+![series details](public/images/screenshots/06-seriesDetails.PNG)
+![movie details](public/images/screenshots/07-movieDetails.PNG)
+
 
 ## What's to come?
 

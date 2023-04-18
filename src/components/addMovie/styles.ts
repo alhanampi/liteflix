@@ -15,7 +15,7 @@ export const AddModalContainer = styled.div`
   padding: 2% 4%;
   text-align: center;
   animation: 1s ${fadeInAnimation};
-  
+
   .close {
     position: absolute;
     right: 2.5em;
@@ -93,12 +93,26 @@ export const AddModalContainer = styled.div`
   @media (max-width: 600px) and (orientation: portrait) {
     height: 100vh;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    
+    & > * {
+      margin-bottom: 3em;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
 
     h2 {
-      margin-top: 10em;
+      margin-top: 6em;
+      font-size: 2em;
     }
     .close {
       display: none;
+    }
+
+    input {
+      width: 80%;
     }
 
     .btn {
@@ -124,6 +138,7 @@ export const AddModalContainer = styled.div`
       }
     }
   }
+
 `;
 
 export const ButtonContainer = styled.div`

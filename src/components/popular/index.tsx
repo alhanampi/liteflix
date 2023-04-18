@@ -1,16 +1,23 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
-import { FC, useEffect, useState } from 'react';
+import {
+  FC, useEffect, useState, useContext,
+} from 'react';
 import { BsChevronDown, BsChevronUp } from 'react-icons/bs';
 import { useRouter } from 'next/router';
 import { getPopular } from '@/services/movieService';
 import { PopularContainer } from './styles';
 import Thumbnail from '../thumbnail';
+import { LiteFlixContext } from '@/context';
 
 const Popular: FC = () => {
   const router = useRouter();
   const [popular, setPopular] = useState<any>( [] );
   const [showPopular, setShowPopular] = useState<boolean>( false );
+
+  const {
+    handlePopular, showPopularCont, showDropdownCont,
+  } = useContext( LiteFlixContext );
 
   useEffect( () => {
     const getPopularMovies = async () => {
@@ -24,6 +31,14 @@ const Popular: FC = () => {
     getPopularMovies();
   }, [] );
 
+  const showModalPopular = () => {
+    setShowPopular( !showPopular );
+    console.log( 'show:', showPopular, 'cont:', showPopularCont );
+    if ( showDropdownCont ) {
+      handlePopular( showPopularCont );
+    } else { handlePopular( !showPopularCont ); }
+  };
+
   const navigate = ( id: number ): void => {
     console.log( id );
     router.push( {
@@ -35,13 +50,13 @@ const Popular: FC = () => {
   return (
     <div>
       <PopularContainer>
-        <h2 onClick={ () => setShowPopular( !showPopular ) }>
+        <h2 onClick={ showModalPopular }>
           <span>Ver:</span>
           &nbsp;
           populares
-          {showPopular ? <BsChevronUp /> : <BsChevronDown />}
+          {showPopularCont && showPopular ? <BsChevronUp /> : <BsChevronDown />}
         </h2>
-        {showPopular && (
+        {showPopularCont && showPopular && (
           <div className="animate">
             {popular.map( ( p: any ) => (
               <Thumbnail

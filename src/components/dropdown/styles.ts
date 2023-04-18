@@ -91,7 +91,7 @@ export const DropdownContainer = styled.div`
 
   @media (max-width: 600px) and (orientation: portrait) {
     width: 100%;
-    height: 90vh;
+    height: 100vh;
     background-color: var(--primary-grey);
 
     li {

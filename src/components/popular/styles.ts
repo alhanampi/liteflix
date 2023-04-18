@@ -58,6 +58,6 @@ export const PopularContainer = styled.div`
   }
 
   @media (max-width: 420px) and (orientation: portrait) {
-        margin-left:24%;
+        margin-left: 42%;
   }
 `;

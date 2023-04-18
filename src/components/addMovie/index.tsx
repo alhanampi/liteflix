@@ -17,6 +17,7 @@ const fileTypes = ['JPG', 'PNG', 'GIF'];
 
 const AddMovieModal: FC = () => {
   const { handleModal } = useContext( LiteFlixContext );
+
   const [showAdd, setshowAdd] = useState<boolean>( true );
   const [progress, setProgress] = useState<number>( 0 );
   const [file, setFile] = useState<File | null>( null );

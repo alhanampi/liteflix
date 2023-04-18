@@ -150,15 +150,15 @@ export const Right = styled.div`
   }
 
   @media (max-width: 1536px) {
-    margin-right: 7em!important; //I hate importants, but this was the only way
+    margin-right: 7em;
   }
 
   @media (max-width: 1366px) {
-    margin-right: 5em!important; //I hate importants, but this was the only way
+    margin-right: 5em;
   }
 
   @media (max-width: 1280px) {
-    margin-right: 3em!important; //I hate importants, but this was the only way
+    margin-right: 3em; 
   }
 
   @media (max-width: 1024px) {

@@ -55,6 +55,7 @@ export const Right = styled.div`
 
   @media (max-width: 600px) and (orientation: portrait) {
     width: 100%;
+    margin-bottom: 3em;
   }
 
   @media (max-width: 420px) and (orientation: portrait) {

@@ -25,7 +25,7 @@ export const Left = styled.div`
 
   @media (max-width: 600px) and (orientation: portrait) {
     align-items: center;
-    margin: 0;
+    margin: 4em 0;
     justify-content: center;
     text-align: center;
     padding: 0;
@@ -33,11 +33,6 @@ export const Left = styled.div`
 
   @media (max-width: 420px) and (orientation: portrait) {
     font-size: 0.8em;
-    align-items: center;
-    margin: 0;
-    justify-content: center;
-    text-align: center;
-    padding: 0;
 
     h2 {
       font-size: 3em;
@@ -95,9 +90,14 @@ export const Similar = styled.div`
     font-size: 2em;
     color: var(--primary-aqua);
   }
-
+  @media (max-width: 600px) and (orientation: portrait) {
+    h2 {
+      text-align: center;
+    }
+  }
   @media (max-width: 420px) and (orientation: portrait) {
     padding: 0;
+    
     h2 {
       padding: 0 1em;
     }

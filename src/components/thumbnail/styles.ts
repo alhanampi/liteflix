@@ -20,7 +20,7 @@ export const ThumbnailContainer = styled.div`
     }
 
     &.biggish {
-      height: 140px;
+      height: 150px;
     }
 
     &.mid {
@@ -105,7 +105,7 @@ export const ThumbnailContainer = styled.div`
 
   @media (max-width: 1536px) {
     img.biggish {
-      height: 130px;
+      height: 120px;
     }
 
     h3 {
@@ -207,5 +207,55 @@ export const ThumbnailContainer = styled.div`
         width: 128%;
       }
     }
+  }
+
+  @media (max-width: 412px) and (orientation: portrait) {
+
+    img.biggish {
+      height: 120px;
+    }
+
+    .play {
+      left: 62%;
+    }
+
+    .box.biggish .play {
+      left: 70%;
+    }
+
+    .box.mid .play {
+      left: 70%;
+    }
+
+    &:hover {
+      .big .scoreContainer {
+        width: 120%;
+      }
+
+      .box.biggish h3 {
+        left: 68%;
+        font-size: 1em;
+        width: 100%;
+      }
+
+      .biggish .play {
+        left: 28%;
+      }
+      .biggish .scoreContainer {
+        width: 120%;
+      }
+      .box.mid h3 {
+        left: 63%;
+        font-size: 1.2em;
+        width: 100%;
+      }
+      .mid .play {
+        left: 28%;
+      }
+      .mid .scoreContainer {
+        width: 128%;
+      }
+    }
+
   }
 `;

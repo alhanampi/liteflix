@@ -17,7 +17,9 @@ import { IHeader } from '@/interfaces';
 
 const Header: FC<IHeader> = ( { mainPage } ) => {
   const router = useRouter();
-  const { handleModal } = useContext( LiteFlixContext );
+  const {
+    handleModal, handleDropdown, showDropdownCont, showPopularCont,
+  } = useContext( LiteFlixContext );
 
   const [showClose, setShowClose] = useState<boolean>( false );
   const [showOptionsModal, setShowOptionsModal] = useState<boolean>( false );
@@ -25,11 +27,19 @@ const Header: FC<IHeader> = ( { mainPage } ) => {
   const showCloseButton = () => {
     setShowClose( !showClose );
     setShowOptionsModal( !showOptionsModal );
+    handleDropdown( true );
   };
 
-  const addMovie = ( e: { preventDefault: () => void; } ) => {
+  const addMovie = ( e: { preventDefault: () => void } ) => {
     e.preventDefault();
     handleModal();
+    handleDropdown( false );
+    if ( showDropdownCont ) {
+      console.log( 'drop:', showDropdownCont );
+      handleDropdown( false );
+      setShowClose( false );
+      console.log( 'showDropdownCont:', showDropdownCont, 'showPopularCont', showPopularCont );
+    }
   };
 
   return (
@@ -51,7 +61,7 @@ const Header: FC<IHeader> = ( { mainPage } ) => {
         </Left>
 
         <Right>
-          {showOptionsModal && (
+          {showOptionsModal && showDropdownCont && (
             <IoMdClose
               size={ 35 }
               onClick={ () => setShowOptionsModal( !showOptionsModal ) }
@@ -76,7 +86,7 @@ const Header: FC<IHeader> = ( { mainPage } ) => {
           <img src="/images/user.jpg" alt="avatar" />
         </Right>
 
-        {showOptionsModal && <Dropdown />}
+        {showOptionsModal && showDropdownCont && <Dropdown />}
       </div>
       <div className="mobile">
         <Right>
