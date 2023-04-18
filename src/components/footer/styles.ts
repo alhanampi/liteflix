@@ -63,4 +63,8 @@ export const Right = styled.div`
       margin: 0;
     }
   }
+
+  @media (max-width: 360px) and (orientation: portrait) {
+    width: 200px;
+  }
 `;

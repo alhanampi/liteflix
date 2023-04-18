@@ -102,4 +102,14 @@ export const DropdownContainer = styled.div`
       }
     }
   }
+
+  @media (max-width: 600px) and (orientation: portrait) {
+    ul {
+    margin-top: 12em;
+
+      li {
+        font-size: 1.2em;
+      }
+    }
+  }
 `;

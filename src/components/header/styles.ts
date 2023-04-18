@@ -15,6 +15,10 @@ export const HeaderContainer = styled.div`
     width: 100%;
   }
 
+  a {
+    text-decoration: none;
+  }
+
   .mobile {
     display: none;
   }
@@ -56,6 +60,10 @@ export const HeaderContainer = styled.div`
   @media (max-width: 600px) and (orientation: portrait) {
     width: 100%;
 
+    a h1 {
+      display: inline-flex;
+    }
+
     .dropButton {
       display: none;
     }
@@ -74,7 +82,10 @@ export const HeaderContainer = styled.div`
   }
 
   @media (max-width: 390px) and (orientation: portrait) {
-    width: 40%;
+    .mobile{
+      width: 100%;
+      justify-content: space-between;
+    }
   }
 `;
 
@@ -84,6 +95,10 @@ export const Logo = styled.h1`
 
   span {
     font-weight: 400;
+  }
+
+  @media (max-width: 390px) and (orientation: portrait) {
+    width: 100%;
   }
 `;
 
@@ -174,7 +189,7 @@ export const Right = styled.div`
   }
 
   @media (max-width: 420px) and (orientation: portrait) {
-    margin-right: -1em!important; //I hate importants, but this was the only way
+    margin-right: -1em;
   }
 `;
 

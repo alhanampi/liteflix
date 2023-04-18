@@ -37,7 +37,17 @@ export const Left = styled.div`
     h2 {
       font-size: 3em;
     }
+
+    img {
+    max-width: 420px;
+  }
   } 
+
+  @media (max-width: 393px) and (orientation: portrait) {
+  img {
+    max-width: 393px;
+  }
+  }
 `;
 
 export const Right = styled.div`

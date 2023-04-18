@@ -64,11 +64,13 @@ export const NowPlayingContainer = styled.div`
     }
 
     h2 {
+      text-align: center;
       font-size: 4em;
       top: 50%;
     }
 
     p {
+      text-align: center;
       font-size: 1.5em;
       top: 45%;
     }
@@ -104,13 +106,13 @@ export const NowPlayingContainer = styled.div`
 
   @media (max-width: 360px) and (orientation: portrait) {
     h2 {
-      font-size: 4em;
-      top: 60%;
+      font-size: 2.8em;
+      top: 50%;
     }
 
     p {
       font-size: 1.2em;
-      top: 60%;
+      top: 45%;
     }
   }
 
@@ -147,11 +149,11 @@ export const ButtonContainer = styled.div`
 
   }
 
-  @media (max-width: 390px) and (orientation: portrait) {
-    top: 80%;
+  @media (max-width: 393px) and (orientation: portrait) {
+    top: 75%;
   }
 
   @media (max-width: 360px) and (orientation: portrait) {
-    top: 73%;
+    top: 80%;
   }
 `;

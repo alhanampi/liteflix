@@ -176,9 +176,11 @@ export const ThumbnailContainer = styled.div`
         width: 100%;
         top: 40%;
       }
+
       .big .play {
         left: 28%;
       }
+
       .big .scoreContainer {
         width: 125%;
       }
@@ -215,15 +217,7 @@ export const ThumbnailContainer = styled.div`
       height: 120px;
     }
 
-    .play {
-      left: 62%;
-    }
-
     .box.biggish .play {
-      left: 70%;
-    }
-
-    .box.mid .play {
       left: 70%;
     }
 
@@ -233,29 +227,14 @@ export const ThumbnailContainer = styled.div`
       }
 
       .box.biggish h3 {
-        left: 68%;
         font-size: 1em;
         width: 100%;
       }
 
-      .biggish .play {
-        left: 28%;
-      }
       .biggish .scoreContainer {
         width: 120%;
       }
-      .box.mid h3 {
-        left: 63%;
-        font-size: 1.2em;
-        width: 100%;
-      }
-      .mid .play {
-        left: 28%;
-      }
-      .mid .scoreContainer {
-        width: 128%;
-      }
-    }
 
+    }
   }
 `;
