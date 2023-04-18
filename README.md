@@ -9,14 +9,14 @@ Challenge project for Litebox.
 This is a nextJS project, so all you have to do is clone it and then,
 
 ```bash
-   npm i
-   npm run dev
+     npm i
+     npm run dev
 ```
 
 And done! you have it all set.
 
 Word of advice, though! some packages are a bit fussy so if the app asks you to install with legacy-peer-deps, just do it. It seems to be something regarding MUI.
-      
+            
 ## Tech Stack
 
 NextJS, Axios, Eslint, Styled Components, TypeScript, Helmet, and more!
@@ -41,19 +41,19 @@ Regarding MUI... it's actually curious, as I didn't install it because of its vi
 
 I tried to test it in the most common screen sizes, so it should work on:
 
-|   width   |  height   |
-|-----------|-----------|
-|   1920    |   1080    |
-|   1536    |    864    |
-|   1366    |    768    |
-|   1280    |    720    |
-|   1024    |    600    |
-|    600    |    800    |
-|    412    |    915    |
-|    393    |    873    |
-|    360    |    800    |
-|    360    |    780    |
-|    360    |    640    |
+|       width       |      height       |
+|-------------------|-------------------|
+|       1920        |       1080        |
+|       1536        |        864        |
+|       1366        |        768        |
+|       1280        |        720        |
+|       1024        |        600        |
+|        600        |        800        |
+|        412        |        915        |
+|        393        |        873        |
+|        360        |        800        |
+|        360        |        780        |
+|        360        |        640        |
 
 ## App screenshots:
 
