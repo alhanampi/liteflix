@@ -10,7 +10,7 @@ import Loader from '@/components/loader';
 import Thumbnail from '../../components/thumbnail';
 import {
   DetailContainer, Left, Right, Similar,
-} from '../details/styles';
+} from '../../styles/details-styles';
 
 const SeriesDetailPage = () => {
   const router = useRouter();
