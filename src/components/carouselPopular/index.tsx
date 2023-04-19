@@ -15,8 +15,8 @@ const CarouselPopular:FC = () => {
       try {
         const res = await getPopularExtra();
         setPopulars( res );
-      } catch ( err ) {
-        throw new Error( `Failed to fetch: ${err}` );
+      } catch ( error ) {
+        throw new Error( `Failed to fetch: ${error}` );
       }
     }
     getData();
