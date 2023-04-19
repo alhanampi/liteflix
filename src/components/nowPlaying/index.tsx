@@ -1,5 +1,3 @@
-/* eslint-disable jsx-a11y/click-events-have-key-events */
-/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 import { FC, useEffect, useState } from 'react';
 import { BsPlay } from 'react-icons/bs';
 import { VscAdd } from 'react-icons/vsc';
@@ -18,7 +16,7 @@ const NowPlaying: FC = () => {
         const res = await getNowPlaying();
         setNowPlaying( res );
       } catch ( err ) {
-        console.log( err );
+        throw new Error( `Failed to fetch: ${err}` );
       }
     };
 
@@ -26,7 +24,6 @@ const NowPlaying: FC = () => {
   }, [] );
 
   const navigate = ( id: number ): void => {
-    console.log( id );
     router.push( {
       pathname: '/details/',
       query: { id },

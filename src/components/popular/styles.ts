@@ -48,8 +48,8 @@ export const PopularContainer = styled.div`
     flex-direction: column;
     margin: auto;
     height: auto;
-    margin-top: -2em;
-    margin-left:30%;
+    margin-top: -10em;
+    margin-left:40%;
 
     h2 {
       font-size: 1.2em;
@@ -59,5 +59,6 @@ export const PopularContainer = styled.div`
 
   @media (max-width: 420px) and (orientation: portrait) {
         margin-left: 42%;
+        margin-top: -2em;
   }
 `;

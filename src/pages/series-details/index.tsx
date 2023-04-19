@@ -1,4 +1,3 @@
-/* eslint-disable no-shadow */
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
@@ -30,9 +29,9 @@ const SeriesDetailPage = () => {
       setCountry( countryName );
       setLoading( false );
     } catch ( err ) {
-      console.log( 'err', err );
       setError( true );
       setLoading( false );
+      throw new Error( `Failed to fetch: ${error}` );
     }
   };
 
@@ -41,7 +40,7 @@ const SeriesDetailPage = () => {
       const res = await getSeriesEpisodes( id );
       setEpisodes( res );
     } catch ( err ) {
-      console.log( 'err', err );
+      throw new Error( `Failed to fetch: ${error}` );
     }
   };
 

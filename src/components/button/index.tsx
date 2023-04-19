@@ -1,10 +1,14 @@
-/* eslint-disable react/require-default-props */
 import { FC } from 'react';
 import { ButtonContainer } from './styles';
 import { IButton } from '@/interfaces';
 
 const Button: FC<IButton> = ( {
-  icon, text, onClick, variation, disabled, classN,
+  icon,
+  text,
+  onClick,
+  variation,
+  disabled,
+  classN,
 } ) => (
   <ButtonContainer
     onClick={ onClick }

@@ -57,7 +57,7 @@ export const DropdownContainer = styled.div`
   }
 
   @media (max-width: 1536px) {
-    height: 70vh;
+    height: 78vh;
   }
 
   @media (max-width: 1366px) {
@@ -110,6 +110,12 @@ export const DropdownContainer = styled.div`
       li {
         font-size: 1.2em;
       }
+    }
+  }
+
+  @media (max-width: 400px) and (orientation: portrait) {
+    ul {
+    margin-top: 8em;
     }
   }
 `;

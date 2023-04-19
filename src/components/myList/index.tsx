@@ -16,7 +16,7 @@ const CarouselLatest:FC = () => {
         const res = await getLatest();
         setLatest( res );
       } catch ( err ) {
-        console.log( err );
+        throw new Error( `Failed to fetch: ${err}` );
       }
     };
 
@@ -24,7 +24,6 @@ const CarouselLatest:FC = () => {
   }, [] );
 
   const navigate = ( id: number ): void => {
-    console.log( id );
     router.push( {
       pathname: '/details/',
       query: { id },

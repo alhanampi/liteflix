@@ -16,14 +16,13 @@ const CarouselSeries:FC = () => {
         const res = await getSeries();
         setSeries( res );
       } catch ( err ) {
-        console.log( err );
+        throw new Error( `Failed to fetch: ${err}` );
       }
     }
     getData();
   }, [] );
 
   const navigateToSeries = ( id: number ): void => {
-    console.log( id );
     router.push( {
       pathname: '/series-details/',
       query: { id },
@@ -41,6 +40,11 @@ const CarouselSeries:FC = () => {
             width: '100%',
             gap: '2em',
             autoWidth: true,
+            breakpoints: {
+              412: {
+                gap: 0,
+              },
+            },
           } }
         >
           {series.map( ( serie: any ) => (

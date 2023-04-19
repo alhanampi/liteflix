@@ -11,12 +11,12 @@ export const MyMovies = () => {
       movies = JSON.parse( moviesJson );
     }
   } catch ( error ) {
-    console.error( 'Error parsing movies JSON:', error );
+    throw new Error( `Failed to fetch: ${error}` );
   }
 
   return (
     <MyMoviesMain>
-      { movies.length > 0 && (
+      {movies.length > 0 && (
         <>
           <Title id="misPeliculas">Mis películas</Title>
           <MyMoviesContainer>

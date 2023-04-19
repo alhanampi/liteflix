@@ -15,6 +15,11 @@ export const DetailContainer = styled.div`
     margin: 0em 4em;
   }
 
+  
+  @media (max-width: 1024px)  {
+    flex-direction: column;
+  }  
+
   @media (max-width: 600px) and (orientation: portrait) {
     flex-direction: column;
   }  

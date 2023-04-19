@@ -1,6 +1,3 @@
-/* eslint-disable consistent-return */
-/* eslint-disable react/no-children-prop */
-/* eslint-disable no-shadow */
 import {
   FC, useEffect, useState, useContext,
 } from 'react';
@@ -38,8 +35,8 @@ const AddMovieModal: FC = () => {
           ] );
           localStorage.setItem( 'movies', JSON.stringify( movies ) );
         } catch ( err ) {
-          console.error( err );
           setError( true );
+          throw new Error( `Failed to fetch: ${err}` );
         }
       };
       reader.readAsDataURL( file );

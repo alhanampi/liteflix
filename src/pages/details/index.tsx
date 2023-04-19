@@ -26,9 +26,9 @@ const MovieDetailPage = () => {
       setMovie( res );
       setLoading( false );
     } catch ( err ) {
-      console.log( 'err', err );
       setError( true );
       setLoading( false );
+      throw new Error( `Failed to fetch: ${error}` );
     }
   };
 
@@ -37,7 +37,7 @@ const MovieDetailPage = () => {
       const res = await getSimilarMovies( id );
       setSimilar( res );
     } catch ( err ) {
-      console.log( 'err', err );
+      throw new Error( `Failed to fetch: ${error}` );
     }
   };
 
@@ -47,15 +47,11 @@ const MovieDetailPage = () => {
   }, [] );
 
   if ( loading ) {
-    return (
-      <Loader />
-    );
+    return <Loader />;
   }
 
   if ( error ) {
-    return (
-      <LoadError />
-    );
+    return <LoadError />;
   }
 
   return (
@@ -93,17 +89,17 @@ const MovieDetailPage = () => {
               </p>
             )}
             {movie.release_date && (
-            <p>
-              Año:&nbsp;
-              {movie.release_date.slice( 0, 4 )}
-            </p>
+              <p>
+                Año:&nbsp;
+                {movie.release_date.slice( 0, 4 )}
+              </p>
             )}
             {movie.runtime && (
-            <p>
-              Duración:&nbsp;
-              {movie.runtime}
-              &nbsp; minutos
-            </p>
+              <p>
+                Duración:&nbsp;
+                {movie.runtime}
+                &nbsp; minutos
+              </p>
             )}
           </div>
         </Right>

@@ -5,28 +5,37 @@
     "plugin:@typescript-eslint/recommended",
     "plugin:react/recommended"
   ],
-  "plugins": [
-    "@typescript-eslint",
-    "react", 
-    "import"
-  ],
+  "plugins": ["@typescript-eslint", "react", "import"],
   "rules": {
     "linebreak-style": "off",
     "react/jsx-curly-spacing": ["error", { "when": "always" }],
     "space-in-parens": ["error", "always"],
     "no-console": "off",
     "@typescript-eslint/no-explicit-any": "off",
-    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx", ".tsx"] }],
+    "react/jsx-filename-extension": [
+      1,
+      { "extensions": [".js", ".jsx", ".tsx"] }
+    ],
     "import/extensions": "off",
     "import/no-unresolved": "off",
-    "react/function-component-definition": "off", 
-    "react/react-in-jsx-scope": "off", 
+    "react/function-component-definition": "off",
+    "react/react-in-jsx-scope": "off",
     "import/no-extraneous-dependencies": "off",
-    "import/prefer-default-export": "off"
+    "import/prefer-default-export": "off",
+    "consistent-return": "off",
+    "react/no-children-prop": "off",
+    "no-shadow": "off",
+    "react/require-default-props": "off",
+    "react/jsx-no-useless-fragment": "off",
+    "jsx-a11y/click-events-have-key-events": "off",
+    "jsx-a11y/no-noninteractive-element-interactions": "off",
+    "react/jsx-no-constructed-context-values": "off",
+    "@typescript-eslint/no-empty-function": "off",
+    "react/jsx-props-no-spreading": "off"
   },
   "settings": {
     "react": {
-      "version": "detect" 
+      "version": "detect"
     }
   }
 }

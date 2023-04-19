@@ -121,6 +121,16 @@ export const ThumbnailContainer = styled.div`
     h3 {
       font-size: 0.8em;
     }
+
+    &:hover{    
+    .biggish h3 {
+      top: 3em;
+    }
+
+    .mid h3 {
+      top: 4.2em;
+      left: 7.2em;
+    }}
   }
 
   @media (max-width: 1280px) {
@@ -133,6 +143,11 @@ export const ThumbnailContainer = styled.div`
     h3 {
       font-size: 0.8em;
     }
+
+    &:hover{    
+    .mid h3 {
+      top: 3.5em;
+    }}
   }
 
   @media (max-width: 1024px) {
@@ -197,11 +212,14 @@ export const ThumbnailContainer = styled.div`
       .biggish .scoreContainer {
         width: 150%;
       }
+
       .box.mid h3 {
         left: 63%;
-        font-size: 1.2em;
+        font-size: 1em;
         width: 100%;
+        top: 30%;
       }
+
       .mid .play {
         left: 28%;
       }
@@ -212,7 +230,14 @@ export const ThumbnailContainer = styled.div`
   }
 
   @media (max-width: 412px) and (orientation: portrait) {
+    img.big {
+      height: 250px;
+    }
 
+    .box.big .play {
+      left: 55%;
+    }
+    
     img.biggish {
       height: 120px;
     }
@@ -221,20 +246,60 @@ export const ThumbnailContainer = styled.div`
       left: 70%;
     }
 
+    img.mid {
+      height: 110px;
+    }
+
+    .box.mid .play {
+      left: 66%;
+    }
+
     &:hover {
       .big .scoreContainer {
-        width: 120%;
-      }
-
-      .box.biggish h3 {
-        font-size: 1em;
         width: 100%;
       }
 
+      .box.big h3 {
+        font-size: 0.8em;
+        width: 90%;
+        top: 45%;
+        left: 58%;
+      }
+      .big .play {
+        left: 28%;
+      }
+
       .biggish .scoreContainer {
+        width: 125%;
+      }
+
+      .biggish .play {
+        left: 28%;
+      }
+
+      .box.biggish h3 {
+        left: 60%;
+        font-size: 0.8em;
+        width: 100%;
+      }
+
+
+
+      .mid .scoreContainer {
         width: 120%;
       }
 
+      .mid .play {
+        left: 28%;
+      }
+      
+      .box.mid h3 {
+        left: 58%;
+        font-size: 0.8em;
+        width: 96%;
+      }
     }
+
+    
   }
 `;

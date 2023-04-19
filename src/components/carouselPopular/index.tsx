@@ -16,14 +16,13 @@ const CarouselPopular:FC = () => {
         const res = await getPopularExtra();
         setPopulars( res );
       } catch ( err ) {
-        console.log( err );
+        throw new Error( `Failed to fetch: ${err}` );
       }
     }
     getData();
   }, [] );
 
   const navigate = ( id: number ): void => {
-    console.log( id );
     router.push( {
       pathname: '/details/',
       query: { id },

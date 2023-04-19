@@ -1,5 +1,3 @@
-/* eslint-disable jsx-a11y/click-events-have-key-events */
-/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 import {
   FC, useEffect, useState, useContext,
 } from 'react';
@@ -25,7 +23,7 @@ const Popular: FC = () => {
         const res = await getPopular();
         setPopular( res );
       } catch ( err ) {
-        console.log( err );
+        throw new Error( `Failed to fetch: ${err}` );
       }
     };
     getPopularMovies();
@@ -33,14 +31,12 @@ const Popular: FC = () => {
 
   const showModalPopular = () => {
     setShowPopular( !showPopular );
-    console.log( 'show:', showPopular, 'cont:', showPopularCont );
     if ( showDropdownCont ) {
       handlePopular( showPopularCont );
     } else { handlePopular( !showPopularCont ); }
   };
 
   const navigate = ( id: number ): void => {
-    console.log( id );
     router.push( {
       pathname: '/details/',
       query: { id },

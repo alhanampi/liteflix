@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-props-no-spreading */
 import type { AppProps } from 'next/app';
 import '../../public/fonts/bebas/fonts.css';
 import CssBaseline from '@material-ui/core/CssBaseline';
