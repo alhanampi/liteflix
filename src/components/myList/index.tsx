@@ -1,9 +1,9 @@
 import { FC, useEffect, useState } from 'react';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import { useRouter } from 'next/router';
+import { getLatest } from '@/services/movieService';
 import Thumbnail from '../thumbnail';
 import { MyMoviesContainer, Title } from '../myMovies/styles';
-import { getLatest } from '@/services/movieService';
 import '@splidejs/react-splide/css';
 
 const CarouselLatest:FC = () => {

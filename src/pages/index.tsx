@@ -3,12 +3,12 @@ import Header from '@/components/header';
 import NowPlaying from '@/components/nowPlaying';
 import Popular from '@/components/popular';
 import AddMovieModal from '@/components/addMovie';
-import { LiteFlixContext, LiteFlixProvider } from '../context';
 import MyMovies from '@/components/myMovies';
 import CarouselSeries from '@/components/carouselSeries';
 import CarouselPopular from '@/components/carouselPopular';
 import CarouselLatest from '@/components/carouselLatest';
 import Footer from '@/components/footer';
+import { LiteFlixContext, LiteFlixProvider } from '../context';
 
 interface IIndexProps {
   showModal: boolean;

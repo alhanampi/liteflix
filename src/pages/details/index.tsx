@@ -2,15 +2,15 @@ import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import { getDetails, getSimilarMovies } from '@/services/movieService';
-import {
-  DetailContainer, Left, Right, Similar,
-} from './styles';
-import Thumbnail from '../../components/thumbnail';
 import '@splidejs/react-splide/css';
 import Header from '@/components/header';
 import Footer from '@/components/footer';
 import LoadError from '@/components/loadError';
 import Loader from '@/components/loader';
+import Thumbnail from '../../components/thumbnail';
+import {
+  DetailContainer, Left, Right, Similar,
+} from './styles';
 
 const MovieDetailPage = () => {
   const router = useRouter();

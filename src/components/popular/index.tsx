@@ -4,9 +4,9 @@ import {
 import { BsChevronDown, BsChevronUp } from 'react-icons/bs';
 import { useRouter } from 'next/router';
 import { getPopular } from '@/services/movieService';
+import { LiteFlixContext } from '@/context';
 import { PopularContainer } from './styles';
 import Thumbnail from '../thumbnail';
-import { LiteFlixContext } from '@/context';
 
 const Popular: FC = () => {
   const router = useRouter();

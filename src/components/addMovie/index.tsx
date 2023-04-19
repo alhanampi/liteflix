@@ -4,11 +4,11 @@ import {
 import { AiOutlinePaperClip } from 'react-icons/ai';
 import { IoMdClose } from 'react-icons/io';
 import { FileUploader } from 'react-drag-drop-files';
+import { IMovie } from '@/interfaces';
+import { LiteFlixContext } from '@/context';
 import Button from '../button';
 import { AddModalContainer, ButtonContainer } from './styles';
 import ProgressBar from '../progressBar';
-import { LiteFlixContext } from '@/context';
-import { IMovie } from '@/interfaces';
 
 const fileTypes = ['JPG', 'PNG', 'GIF'];
 

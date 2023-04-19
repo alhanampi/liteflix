@@ -1,8 +1,8 @@
 import { FC } from 'react';
 import { BsPlayCircle } from 'react-icons/bs';
 import { AiFillStar } from 'react-icons/ai';
-import { ThumbnailContainer } from './styles';
 import { IThumbnail } from '@/interfaces';
+import { ThumbnailContainer } from './styles';
 
 const Thumbnail: FC<IThumbnail> = ( {
   image,

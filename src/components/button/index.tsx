@@ -1,6 +1,6 @@
 import { FC } from 'react';
-import { ButtonContainer } from './styles';
 import { IButton } from '@/interfaces';
+import { ButtonContainer } from './styles';
 
 const Button: FC<IButton> = ( {
   icon,

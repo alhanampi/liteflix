@@ -3,7 +3,8 @@
   "extends": [
     "airbnb",
     "plugin:@typescript-eslint/recommended",
-    "plugin:react/recommended"
+    "plugin:react/recommended",
+    "next"
   ],
   "plugins": ["@typescript-eslint", "react", "import"],
   "rules": {
@@ -31,7 +32,9 @@
     "jsx-a11y/no-noninteractive-element-interactions": "off",
     "react/jsx-no-constructed-context-values": "off",
     "@typescript-eslint/no-empty-function": "off",
-    "react/jsx-props-no-spreading": "off"
+    "react/jsx-props-no-spreading": "off",
+    "import/no-named-as-default": "off",
+    "@next/next/no-img-element": "off"
   },
   "settings": {
     "react": {

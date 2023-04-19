@@ -5,12 +5,12 @@ import { HiMenuAlt3 } from 'react-icons/hi';
 import { BsBell } from 'react-icons/bs';
 import { IoMdClose, IoMdHome } from 'react-icons/io';
 import Link from 'next/link';
+import { LiteFlixContext } from '@/context';
+import { IHeader } from '@/interfaces';
 import {
   HeaderContainer, Left, Logo, Right, ReturnText,
 } from './styles';
 import Dropdown from '../dropdown';
-import { LiteFlixContext } from '@/context';
-import { IHeader } from '@/interfaces';
 
 const Header: FC<IHeader> = ( { mainPage } ) => {
   const router = useRouter();

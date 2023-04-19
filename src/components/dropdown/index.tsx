@@ -1,7 +1,7 @@
 import { FC, useContext } from 'react';
 import { VscAdd } from 'react-icons/vsc';
-import { DropdownContainer } from './styles';
 import { LiteFlixContext } from '@/context';
+import { DropdownContainer } from './styles';
 
 const Dropdown: FC = () => {
   const { handleModal, handleClose } = useContext( LiteFlixContext );
