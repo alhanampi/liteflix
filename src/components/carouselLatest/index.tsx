@@ -1,10 +1,10 @@
 import { FC, useEffect, useState } from 'react';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import { getLatest } from '@/services/movieService';
+import { useNavigate } from '@/utils/useNavigate';
 import Thumbnail from '../thumbnail';
 import { MyMoviesContainer, Title } from '../myMovies/styles';
 import '@splidejs/react-splide/css';
-import { useNavigate } from '@/utils/useNavigate';
 
 const CarouselLatest:FC = () => {
   const navigate = useNavigate();

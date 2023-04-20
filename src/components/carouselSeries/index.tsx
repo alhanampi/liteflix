@@ -1,10 +1,10 @@
 import { FC, useEffect, useState } from 'react';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import { getSeries } from '@/services/movieService';
+import { useNavigateSeries } from '@/utils/useNavigateSeries';
 import Thumbnail from '../thumbnail';
 import { MyMoviesContainer, Title } from '../myMovies/styles';
 import '@splidejs/react-splide/css';
-import { useNavigateSeries } from '@/utils/useNavigateSeries';
 
 const CarouselSeries:FC = () => {
   const navigateToSeries = useNavigateSeries();

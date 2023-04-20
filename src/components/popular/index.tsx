@@ -4,9 +4,9 @@ import {
 import { BsChevronDown, BsChevronUp } from 'react-icons/bs';
 import { getPopular } from '@/services/movieService';
 import { LiteFlixContext } from '@/context';
+import { useNavigate } from '@/utils/useNavigate';
 import { PopularContainer } from './styles';
 import Thumbnail from '../thumbnail';
-import { useNavigate } from '@/utils/useNavigate';
 
 const Popular: FC = () => {
   const navigate = useNavigate();

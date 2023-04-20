@@ -7,9 +7,9 @@ import MyMovies from '@/components/myMovies';
 import CarouselSeries from '@/components/carouselSeries';
 import CarouselPopular from '@/components/carouselPopular';
 import CarouselLatest from '@/components/carouselLatest';
+import Backdrop from '@/components/backdrop';
 import Footer from '@/components/footer';
 import { LiteFlixContext, LiteFlixProvider } from '../context';
-import Backdrop from '@/components/backdrop';
 
 interface IIndexProps {
   showModal: boolean;
