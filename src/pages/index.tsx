@@ -9,6 +9,7 @@ import CarouselPopular from '@/components/carouselPopular';
 import CarouselLatest from '@/components/carouselLatest';
 import Footer from '@/components/footer';
 import { LiteFlixContext, LiteFlixProvider } from '../context';
+import Backdrop from '@/components/backdrop';
 
 interface IIndexProps {
   showModal: boolean;
@@ -17,13 +18,18 @@ interface IIndexProps {
 const Index: FC<IIndexProps> = ( { showModal } ) => {
   const movies = typeof window !== 'undefined' && localStorage.getItem( 'movies' );
   const myMoviesExist = Boolean( movies );
-  return (
 
+  return (
     <>
       <Header mainPage />
       <NowPlaying />
       <Popular />
-      {showModal && <AddMovieModal />}
+      {showModal && (
+      <>
+        <AddMovieModal />
+        <Backdrop />
+      </>
+      )}
       {myMoviesExist && <MyMovies />}
       <CarouselSeries />
       <CarouselPopular />

@@ -80,7 +80,7 @@ const AddMovieModal: FC = () => {
         } else {
           clearInterval( interval );
         }
-      }, Math.random() * 100 );
+      }, Math.random() * 20 );
       return () => clearInterval( interval );
     }
   }, [showAdd, progress] );
@@ -145,20 +145,20 @@ const AddMovieModal: FC = () => {
 
         <ButtonContainer>
           {progress !== 100 && (
-            <>
-              <Button
-                text="Subir película"
-                variation={ false }
-                onClick={ upload }
-                disabled={ !!( title.trim() === '' || file === null ) }
-              />
-              <Button
-                text="Salir"
-                classN="closeButton"
-                onClick={ handleModal }
-                variation
-              />
-            </>
+          <>
+            <Button
+              text="Subir película"
+              variation={ false }
+              onClick={ upload }
+              disabled={ !!( title.trim() === '' || file === null ) }
+            />
+            <Button
+              text="Salir"
+              classN="closeButton"
+              onClick={ handleModal }
+              variation
+            />
+          </>
           )}
           {progress === 100 && (
           <>

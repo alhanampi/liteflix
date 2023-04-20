@@ -1,13 +1,13 @@
 import { FC, useEffect, useState } from 'react';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
-import { useRouter } from 'next/router';
 import { getSeries } from '@/services/movieService';
 import Thumbnail from '../thumbnail';
 import { MyMoviesContainer, Title } from '../myMovies/styles';
 import '@splidejs/react-splide/css';
+import { useNavigateSeries } from '@/utils/useNavigateSeries';
 
 const CarouselSeries:FC = () => {
-  const router = useRouter();
+  const navigateToSeries = useNavigateSeries();
   const [series, setSeries] = useState<any>( [] );
 
   useEffect( () => {
@@ -21,13 +21,6 @@ const CarouselSeries:FC = () => {
     }
     getData();
   }, [] );
-
-  const navigateToSeries = ( id: number ): void => {
-    router.push( {
-      pathname: '/series-details/',
-      query: { id },
-    } );
-  };
 
   return (
     <>

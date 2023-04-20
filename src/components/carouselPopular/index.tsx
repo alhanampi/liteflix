@@ -1,13 +1,13 @@
 import { FC, useEffect, useState } from 'react';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
-import { useRouter } from 'next/router';
 import { getPopularExtra } from '@/services/movieService';
 import Thumbnail from '../thumbnail';
 import { MyMoviesContainer, Title } from '../myMovies/styles';
 import '@splidejs/react-splide/css';
+import { useNavigate } from '@/utils/useNavigate';
 
 const CarouselPopular:FC = () => {
-  const router = useRouter();
+  const navigate = useNavigate();
   const [populars, setPopulars] = useState<any>( [] );
 
   useEffect( () => {
@@ -21,13 +21,6 @@ const CarouselPopular:FC = () => {
     }
     getData();
   }, [] );
-
-  const navigate = ( id: number ): void => {
-    router.push( {
-      pathname: '/details/',
-      query: { id },
-    } );
-  };
 
   return (
     <>

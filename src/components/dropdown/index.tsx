@@ -2,6 +2,7 @@ import { FC, useContext } from 'react';
 import { VscAdd } from 'react-icons/vsc';
 import { LiteFlixContext } from '@/context';
 import { DropdownContainer } from './styles';
+import { handleScroll } from '@/utils/handleScroll';
 
 const Dropdown: FC = () => {
   const { handleModal, handleClose } = useContext( LiteFlixContext );
@@ -13,10 +14,7 @@ const Dropdown: FC = () => {
   };
 
   const handleSectionClick = ( id: string ): void => {
-    const sectionId = document.getElementById( id );
-    if ( sectionId ) {
-      window.scrollTo( { top: sectionId.offsetTop, behavior: 'smooth' } );
-    }
+    handleScroll( id );
   };
 
   return (

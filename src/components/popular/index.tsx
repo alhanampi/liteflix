@@ -2,14 +2,14 @@ import {
   FC, useEffect, useState, useContext,
 } from 'react';
 import { BsChevronDown, BsChevronUp } from 'react-icons/bs';
-import { useRouter } from 'next/router';
 import { getPopular } from '@/services/movieService';
 import { LiteFlixContext } from '@/context';
 import { PopularContainer } from './styles';
 import Thumbnail from '../thumbnail';
+import { useNavigate } from '@/utils/useNavigate';
 
 const Popular: FC = () => {
-  const router = useRouter();
+  const navigate = useNavigate();
   const [popular, setPopular] = useState<any>( [] );
   const [showPopular, setShowPopular] = useState<boolean>( false );
 
@@ -34,13 +34,6 @@ const Popular: FC = () => {
     if ( showDropdownCont ) {
       handlePopular( showPopularCont );
     } else { handlePopular( !showPopularCont ); }
-  };
-
-  const navigate = ( id: number ): void => {
-    router.push( {
-      pathname: '/details/',
-      query: { id },
-    } );
   };
 
   return (
