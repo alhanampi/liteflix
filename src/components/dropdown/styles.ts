@@ -1,7 +1,8 @@
 import styled, { keyframes } from 'styled-components';
-import { fadeInDown } from 'react-animations';
+import { fadeInDown, fadeInLeft } from 'react-animations';
 
 const fadeInDownAnimation = keyframes`${fadeInDown}`;
+const fadeInLeftAnimation = keyframes`${fadeInLeft}`;
 
 export const DropdownContainer = styled.div`
   position: absolute;
@@ -10,14 +11,14 @@ export const DropdownContainer = styled.div`
   background-color: var(--primary-grey-transparent);
   height: 70vh;
   width: 30%;
-  z-index: 35;
+  z-index: 19;
   padding: 2% 4%;
   animation: .5s ${fadeInDownAnimation};
   
   .closeButton {
     margin-top: 3%;
     cursor: pointer;
-    z-index: 45;
+    z-index: 19;
     position: relative;
     :hover {
       transition: 0.3s ease;
@@ -74,6 +75,7 @@ export const DropdownContainer = styled.div`
     top: 0em;
     left: 0em;
     background-color: var(--primary-grey);
+    animation: .5s ${fadeInLeftAnimation};
 
     ul {
       margin-top: 5em;

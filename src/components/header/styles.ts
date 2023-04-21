@@ -7,7 +7,7 @@ export const HeaderContainer = styled.div`
   flex-wrap: nowrap;
   justify-content: space-between;
   padding: 1em 4em;
-  z-index: 20;
+  z-index: 21;
   width: 100%;
 
   .desktop {
@@ -92,6 +92,7 @@ export const HeaderContainer = styled.div`
 export const Logo = styled.h1`
   color: var(--primary-aqua);
   display: inline;
+  letter-spacing: 1.5px;
 
   span {
     font-weight: 400;

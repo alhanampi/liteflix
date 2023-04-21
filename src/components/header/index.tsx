@@ -14,19 +14,18 @@ import Dropdown from '../dropdown';
 
 const Header: FC<IHeader> = ( { mainPage } ) => {
   const router = useRouter();
-  const { handleModal, handleDropdown } = useContext( LiteFlixContext );
+  const { handleModal, handleDropdown, showDropdownCont } = useContext( LiteFlixContext );
 
   const [showClose, setShowClose] = useState<boolean>( false );
-  const [showOptionsModal, setShowOptionsModal] = useState<boolean>( false );
 
   const showCloseButton = () => {
     setShowClose( !showClose );
-    setShowOptionsModal( !showOptionsModal );
     handleDropdown( true );
   };
 
   const addMovie = () => {
     handleModal();
+    handleDropdown( false );
   };
 
   return (
@@ -48,10 +47,10 @@ const Header: FC<IHeader> = ( { mainPage } ) => {
         </Left>
 
         <Right>
-          {showOptionsModal && (
+          {showDropdownCont && (
             <IoMdClose
               size={ 35 }
-              onClick={ () => setShowOptionsModal( !showOptionsModal ) }
+              onClick={ () => handleDropdown( false ) }
               className="closeButton show"
             />
           )}
@@ -60,7 +59,7 @@ const Header: FC<IHeader> = ( { mainPage } ) => {
               <HiMenuAlt3
                 size={ 35 }
                 onClick={ showCloseButton }
-                className={ `"iconHeader" ${showOptionsModal && 'hide'}` }
+                className={ `"iconHeader" ${showDropdownCont && 'hide'}` }
               />
               <BsBell size={ 35 } className="iconHeader" />
             </>
@@ -73,7 +72,7 @@ const Header: FC<IHeader> = ( { mainPage } ) => {
           <img src="/images/user.jpg" alt="avatar" />
         </Right>
 
-        {showOptionsModal && <Dropdown />}
+        {showDropdownCont && <Dropdown />}
       </div>
       <div className="mobile">
         <Right>
@@ -82,12 +81,12 @@ const Header: FC<IHeader> = ( { mainPage } ) => {
               <HiMenuAlt3
                 size={ 35 }
                 onClick={ showCloseButton }
-                className={ showOptionsModal ? 'dropButton' : '' }
+                className={ showDropdownCont ? 'dropButton' : '' }
               />
-              {showOptionsModal && (
+              {showDropdownCont && (
                 <IoMdClose
                   size={ 35 }
-                  onClick={ () => setShowOptionsModal( !showOptionsModal ) }
+                  onClick={ () => handleDropdown( false ) }
                   className="closeButton show"
                 />
               )}
@@ -104,7 +103,7 @@ const Header: FC<IHeader> = ( { mainPage } ) => {
             </Logo>
           </Link>
           <img src="/images/user.jpg" alt="avatar" />
-          {showOptionsModal && <Dropdown />}
+          {showDropdownCont && <Dropdown />}
         </Right>
       </div>
     </HeaderContainer>

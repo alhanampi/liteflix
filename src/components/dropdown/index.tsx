@@ -5,16 +5,18 @@ import { LiteFlixContext } from '@/context';
 import { DropdownContainer } from './styles';
 
 const Dropdown: FC = () => {
-  const { handleModal, handleClose } = useContext( LiteFlixContext );
+  const { handleModal, handleClose, handleDropdown } = useContext( LiteFlixContext );
 
   const addMovie = ( e: any ) => {
     e.preventDefault();
     handleModal();
     handleClose( false );
+    handleDropdown( false );
   };
 
   const handleSectionClick = ( id: string ): void => {
     handleScroll( id );
+    handleDropdown( false );
   };
 
   return (

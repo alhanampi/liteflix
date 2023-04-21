@@ -11,7 +11,7 @@ export const AddModalContainer = styled.div`
   background-color: var(--primary-grey);
   height: 37vh;
   width: 35%;
-  z-index: 15;
+  z-index: 20;
   padding: 2% 4%;
   text-align: center;
   animation: 1s ${fadeInAnimation};
